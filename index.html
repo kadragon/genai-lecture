@@ -68,21 +68,26 @@
     <!-- 02 GPU -->
     <section data-scene="gpu" data-kicker="02 · GPU" data-term="Graphics Processing Unit">
       <h2 class="bridge" data-show="0">사람이 답을 넣어 주지 않아도<br>기계가 <em>스스로</em> 배우려면?</h2>
-      <div data-show="1-">
+      <div class="numstore">
+        <div class="ns" data-show="1" data-rise><span class="src glyph">가</span><svg class="i"><use href="#i-arrow-right"/></svg><code>44032</code><small>글자 하나</small></div>
+        <div class="ns" data-show="1" data-rise data-delay="0.4"><span class="src swatch"></span><svg class="i"><use href="#i-arrow-right"/></svg><code>35 · 70 · 209</code><small>그림의 점 하나</small></div>
+      </div>
+      <div data-show="2-">
         <div class="pixlabel cpu"><b>CPU</b><span>붓 한 자루 · 차례로</span></div>
         <div class="pixlabel gpu"><b>GPU</b><span>붓 수천 자루 · 한꺼번에</span></div>
         <div class="pixgrid cpu"></div>
         <div class="pixgrid gpu"></div>
       </div>
-      <p class="aside" data-show="3" data-delay="0.8"><svg class="i"><use href="#i-arrow-right"/></svg>그래서 NVIDIA 주가가…</p>
+      <p class="aside" data-show="4" data-delay="0.8"><svg class="i"><use href="#i-arrow-right"/></svg>그래서 NVIDIA 주가가…</p>
 
       <div class="captions">
         <p data-show="0">엄청난 양의 <em>계산</em>이 필요했다</p>
-        <p data-show="1">그 계산을 잘하는 부품이 게임용 그래픽카드<small>게임 화면은 수백만 개의 점(픽셀)</small></p>
-        <p data-show="2">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
-        <p data-show="3" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다</p>
+        <p data-show="1">컴퓨터는 글자도, 그림도 <em>숫자</em>로 저장한다<small>그러니 배우는 일도 결국 숫자 계산</small></p>
+        <p data-show="2">그 계산을 잘하는 부품이 게임용 그래픽카드<small>게임 화면은 수백만 개의 점(픽셀)</small></p>
+        <p data-show="3">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
+        <p data-show="4" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다</p>
       </div>
-      <aside class="notes">3단계: 오른쪽 위 문구에서 NVIDIA 주가 이야기를 말로 가볍게.</aside>
+      <aside class="notes">1단계: '가'는 컴퓨터 안에서 44032, 파란 점 하나는 빨강·초록·파랑 세 숫자. 4단계: 오른쪽 위 문구에서 NVIDIA 주가 이야기를 말로 가볍게.</aside>
     </section>
 
     <!-- 03 AlphaGo -->
@@ -93,9 +98,7 @@
       <div class="scale-overlay">
         <div class="go-circle"></div>
         <div class="atom"><i></i><span>우주의 원자 약 10<sup>80</sup>개</span></div>
-        <div class="go-label">바둑의 경우의 수 약 10<sup>170</sup>
-          <small>원자 하나하나가 또 하나의 우주여도(10<sup>160</sup>) 모자란다</small>
-        </div>
+        <div class="go-label">바둑의 경우의 수 약 10<sup>170</sup></div>
       </div>
 
       <div class="chip-anchor"><div class="chip" data-id="cand-1">62%</div></div>
@@ -326,26 +329,6 @@
       <p class="note">생각 과정·시간·토큰 수는 설명용 예시</p>
     </section>
 
-    <!-- 07 Glass -->
-    <section data-steps="2" data-kicker="07 · 생각의 사슬" data-term="Reasoning">
-      <div class="think"><small>AI가 보여 주는 생각 과정 · Reasoning</small>먼저 날짜 조건을 확인하고 → 예외 조항과 대조하면 → <b>답은 B</b></div>
-      <div class="glass" data-show="1" data-rise>
-        <div class="matrix" aria-hidden="true">0.137  -0.882   0.451   0.029  -0.316   0.774  -0.051   0.608  -0.247   0.913  -0.402   0.186
--0.564  0.211  -0.093   0.847   0.362  -0.715   0.428  -0.186   0.059   0.331  -0.978   0.644
-0.702  -0.138   0.519  -0.461   0.077   0.295  -0.823   0.146   0.690  -0.027   0.358  -0.511
--0.249  0.936  -0.604   0.183  -0.372   0.058   0.721  -0.445   0.264  -0.897   0.119   0.483
-0.395  -0.071   0.812  -0.529   0.646  -0.214   0.037   0.958  -0.683   0.402  -0.156   0.271
--0.818  0.447   0.162  -0.305   0.574  -0.936   0.289   0.013  -0.472   0.765   0.208  -0.639</div>
-        <div class="frost"></div>
-        <span class="tag">실제 내부 계산</span>
-      </div>
-
-      <div class="captions">
-        <p data-show="0">생각 과정이 보이니 이유를 알 것 같지만</p>
-        <p data-show="1" class="strong">실제 내부와 <em>다를 수 있다</em><small>참고는 하되, 그대로 믿지는 말 것</small></p>
-      </div>
-    </section>
-
     <!-- 08 Context -->
     <section data-scene="context" data-kicker="08 · 맥락" data-term="Context window">
       <div class="scroll-wrap">
@@ -376,7 +359,7 @@
           <div class="nc-new"><svg class="i"><use href="#i-square-pen"/></svg>새 채팅</div>
           <span class="nc-old">출장비 규정 검토</span>
           <span>회의록 요약</span>
-          <span>공문 초안</span>
+          <span>보고서 초안</span>
         </div>
         <div class="nc-main">
           <div class="pinned"><b>요약 한 장</b>목표는 …, 결정한 것은 …, 남은 일은 …</div>
@@ -627,7 +610,7 @@
         <div class="card" data-show="1-" data-rise><b>01</b><h3>좋은 프롬프트는 참고만</h3><p>틀에 얽매이지 말자</p></div>
         <div class="card" data-show="2-" data-rise><b>02</b><h3>한 번에 완성하려 하지 않기</h3><p>여러 번 대화하며 다가간다</p></div>
         <div class="card" data-show="3-" data-rise><b>03</b><h3>잘 나오면 되묻기</h3><p class="say">다음에도 이렇게 처리하려면 어떻게 요청해?</p></div>
-        <div class="card" data-show="4-" data-rise><b>04</b><h3>AI가 되묻게 하기</h3><p class="say">관련해서 내가 뭘 찾아봐야 할지 알려 줘</p></div>
+        <div class="card" data-show="4-" data-rise><b>04</b><h3>AI가 되묻게 하기</h3><p class="say">시작하기 전에 필요한 걸 나에게 먼저 물어봐 줘</p></div>
       </div>
 
       <div class="captions">
@@ -638,7 +621,7 @@
 
     <!-- Practice 2 -->
     <section class="practice" data-steps="1" data-kicker="실습 2 · AI가 묻게 하기" data-term="5분">
-      <ol class="p-steps" data-show="0-" data-rise><li>오른쪽 요청을 그대로 보낸다</li><li>AI의 질문에 하나씩 답한다 (날짜·과목은 지어내도 된다)</li><li>공지가 나오면 한 군데를 분명하게 고쳐 달라고 한다</li><li>“다음에도 이렇게 받으려면 어떻게 요청하면 돼?”</li></ol>
+      <ol class="p-steps" data-show="0-" data-rise><li>오른쪽 요청을 그대로 보낸다</li><li>AI의 질문에 하나씩 답한다 (날짜·과목은 지어내도 된다)</li><li>공지가 나오면 한 군데를 분명하게 고쳐 달라고 한다</li><li>“이 공지를 처음부터 한 번에 받으려면 어떻게 요청하면 돼?”</li></ol>
       <div class="p-prompt" data-show="0-" data-rise data-delay="0.15">
         <span class="p-label">복사해서 붙여 넣기</span>
         <p>학생들에게 보낼 휴강 공지를 쓰려고 해. 쓰기 전에 필요한 정보를 나에게 하나씩 물어봐 줘.</p>
@@ -652,20 +635,23 @@
     <!-- 13 Translationese -->
     <section data-scene="mold" data-kicker="13 · 사례: 번역투 교정">
       <div class="mold">
-        <div class="mold-grid" data-show="0-1"></div>
-        <span class="mold-tag" data-show="0-1">영어 문장 틀</span>
-        <div class="sent a" data-show="0">나는 그 결정<mark class="tr">에 대해</mark> 책임을 <mark class="tr">가지고 있다</mark>.</div>
-        <div class="sent a" data-show="1">나는 그 결정<mark class="tr">에 대해</mark> 책임이 있다.</div>
-        <div class="sent a" data-show="2-" data-delay="0.6"><span class="fixed">그 결정은 내가 책임진다.</span></div>
-        <div class="sent b" data-show="0">회의<mark class="tr">를 통해</mark> <mark class="tr">의견 수렴이 이루어졌다</mark>.</div>
-        <div class="sent b" data-show="1">회의<mark class="tr">를 통해</mark> 의견을 수렴했다.</div>
-        <div class="sent b" data-show="2-" data-delay="0.8"><span class="fixed">회의에서 의견을 모았다.</span></div>
+        <div class="mold-grid" data-show="1-2"></div>
+        <span class="mold-tag" data-show="1-2">영어 문장 틀</span>
+        <div class="sent a" data-show="0">나는 그 결정에 대해 책임을 가지고 있다.</div>
+        <div class="sent a" data-show="1"><mark class="tr">나는</mark> 그 결정<mark class="tr">에 대해</mark> 책임을 <mark class="tr">가지고 있다</mark>.</div>
+        <div class="sent a" data-show="2"><mark class="tr">나는</mark> 그 결정<mark class="tr">에 대해</mark> 책임이 있다.</div>
+        <div class="sent a" data-show="3-" data-delay="0.6"><span class="fixed">그 결정은 <u>내가</u> 책임진다.</span></div>
+        <div class="sent b" data-show="0">회의를 통해 의견 수렴이 이루어졌다.</div>
+        <div class="sent b" data-show="1">회의<mark class="tr">를 통해</mark> <mark class="tr">의견 수렴이 이루어졌다</mark>.</div>
+        <div class="sent b" data-show="2">회의<mark class="tr">를 통해</mark> 의견을 수렴했다.</div>
+        <div class="sent b" data-show="3-" data-delay="0.8"><span class="fixed">회의에서 의견을 모았다.</span></div>
       </div>
-      <div class="bubble-me" style="left: 120px; top: 725px" data-show="2" data-rise>AI가 자주 틀리는 한국어 자료를 찾아 교정 프롬프트를 만들어 줘</div>
-      <div class="agent-drawer" data-show="3" data-delay="0.2"><span>한국어 교정 에이전트</span></div>
-      <div class="guide-wrap" data-show="2">
+      <div class="bubble-me" style="left: 120px; top: 725px" data-show="3" data-rise>AI가 자주 틀리는 한국어 자료를 찾아 교정 프롬프트를 만들어 줘</div>
+      <div class="agent-drawer" data-show="4" data-delay="0.2"><span>한국어 교정 에이전트</span></div>
+      <div class="guide-wrap" data-show="3">
         <div class="guide sheet">
           <h4>교정 지침</h4>
+          <p>· 주어는 필요할 때만 '이/가'로</p>
           <p>· '가지고 있다' 직역 금지</p>
           <p>· '~를 통해' → '~에서', '~로'</p>
           <p>· 명사 덩어리 → 동사로</p>
@@ -675,28 +661,31 @@
       </div>
 
       <div class="captions">
-        <p data-show="0">AI가 가장 잘하는 언어는 영어<small>그래서 한국어에 번역투가 남는다</small></p>
-        <p data-show="1">"번역투 고쳐 줘" → <em>겉만</em> 다듬어진다</p>
-        <p data-show="2" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 틀이 녹는다</p>
-        <p data-show="3">지침은 <em>저장</em>해 두고 계속 쓴다</p>
+        <p data-show="0">이 두 문장, 어떻게 읽히나요?</p>
+        <p data-show="1">AI가 가장 잘하는 언어는 영어<small>그래서 한국어에 번역투가 남는다</small></p>
+        <p data-show="2">"번역투 고쳐 줘" → <em>겉만</em> 다듬어진다</p>
+        <p data-show="3" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 틀이 녹는다<small>책임지는 사람은 새 정보라 '내가', 회의 문장은 주어를 뺀다</small></p>
+        <p data-show="4">지침은 <em>저장</em>해 두고 계속 쓴다</p>
       </div>
       <aside class="notes">
-        다음 슬라이드에 실제 결과물(한국어 문법 지침)이 나온다.
-        적용 범위 — 문서·주석·커밋 본문·리포트까지 한국어로 쓰는 순간 전부 적용.
-        주어 생략이 기본 · 동사 중심 · 신정보는 이/가, 주제·대조는 은/는 · have 직역, 무생물 주어 + 만능 동사, ~에 의해 피동, ~에 대해/~를 통해 금지.
+        0단계: 번역투라는 말 없이 문장만 보여 주고 청중에게 어떻게 읽히는지 먼저 묻는다.
+        다음 슬라이드에 실제 결과물(한국어 교정 지침 요약)이 나온다.
       </aside>
     </section>
 
     <!-- 13 Real guideline -->
     <section data-steps="1" data-kicker="13 · 사례: 번역투 교정">
       <div class="rules sheet">
-        <h3>한국어 문법<small>AI가 자료를 찾아 만든 지침 — 실제 사용 중</small></h3>
+        <h3>한국어 교정 지침<small>AI가 국어 문법 자료·논문을 찾아 만든 지침 — 실제 사용 중</small></h3>
         <ul>
-          <li><b>적용 범위</b> — 대면 텍스트만이 아니라 문서·주석·커밋 본문·리포트까지, 한국어로 쓰는 순간 아래 규칙 전부 적용</li>
-          <li><b>주어 생략이 기본</b> — 문맥이 주는 <code>저는/우리는/이것은</code>은 뺀다. 주어를 매 문장 명시하면 조사만 한글인 영어다</li>
-          <li><b>동사 중심</b> — 영어의 명사 덩어리를 동사로 푼다: <code>검토를 진행한다</code>→<code>검토한다</code></li>
-          <li>신정보·현상은 <code>이/가</code>, 주제·대조는 <code>은/는</code>. 영어 주어를 전부 <code>은/는</code>으로 옮기지 않는다</li>
-          <li><b>짧은 글에서도 금지</b> — have 직역(<code>가지고 있다</code>) · 무생물 주어 + 만능 동사 · <code>~에 의해</code> 피동 · <code>~에 대해</code>/<code>~를 통해</code></li>
+          <li><b>번역투의 정체</b> — 어휘가 아니라 한국어에 없는 영어 문법이 옮겨 온 흔적</li>
+          <li><b>구문</b> — have 직역 <code>가지고 있다</code>, 피동 <code>~에 의해 ~되다</code></li>
+          <li><b>굴절</b> — 복수 <code>-들</code>, 대명사 <code>그녀/그들</code>을 습관처럼 붙이지 않는다</li>
+          <li><b>전치사</b> — <code>~로부터</code> · <code>~를 통해</code> · <code>~의</code>를 줄인다</li>
+          <li><b>주어 생략</b> — 문맥이 알려 주는 <code>저는/우리는/이것은</code>은 뺀다</li>
+          <li><b>동사 중심</b> — <code>검토를 진행한다</code>→<code>검토한다</code>, <code>-성/-적/-화</code>는 원래 동사로</li>
+          <li><b>은/는 · 이/가</b> — 새 정보는 <code>이/가</code>, 주제·대조는 <code>은/는</code> · <code>이 API는 응답이 느리다</code></li>
+          <li><b>지킬 것</b> — 뜻과 높임 수준은 그대로, 표현만 바꾼다</li>
         </ul>
       </div>
       <div class="captions">
@@ -724,7 +713,7 @@
       <div class="recipe">
         <div class="pg" style="top: 36px; left: 36px" data-show="4"></div>
         <div class="pg" style="top: 18px; left: 18px" data-show="4"></div>
-        <div class="cover" data-show="3-" data-rise><h4>나만의<br>지침 모음</h4><p>공문서 작성<br>한국어 교정<br>영수증 정리</p></div>
+        <div class="cover" data-show="3-" data-rise><h4>나만의<br>지침 모음</h4><p>보고서 작성<br>한국어 교정<br>영수증 정리</p></div>
       </div>
 
       <div class="captions">
@@ -741,16 +730,16 @@
       <div class="title-num">PART 3</div>
       <div class="title-block">
         <h1 class="title-main">실무에서는<br>이렇게<span class="cursor"></span></h1>
-        <p class="title-sub">공문서와 영수증</p>
+        <p class="title-sub">보고서와 영수증</p>
       </div>
       <div class="title-toc">
-        <span>공문서 작성<b>15</b></span>
+        <span>보고서 작성<b>15</b></span>
         <span>영수증 정리<b>16</b></span>
       </div>
     </section>
 
     <!-- 15 Text over hwp -->
-    <section data-steps="2" data-kicker="15 · 공문서 작성">
+    <section data-steps="2" data-kicker="15 · 보고서 작성">
       <div class="filebox card" style="left: 220px">
         <div class="fileicon">HWP<span class="x"><svg class="i"><use href="#i-x"/></svg></span></div>
         <h3>한글 파일을 직접 만들게 하기</h3>
@@ -762,49 +751,49 @@
         <p>내용은 AI가 쓰고<br>양식에 옮기는 건 사람이</p>
       </div>
       <div class="captions">
-        <p data-show="0">공문서, 파일째 만들게 할까?</p>
+        <p data-show="0">보고서, 파일째 만들게 할까?</p>
         <p data-show="1" class="strong">내용은 <em>텍스트</em>로 받자</p>
       </div>
     </section>
 
     <!-- 15 Form x-ray -->
-    <section data-scene="xray" data-kicker="15 · 공문서 작성">
+    <section data-scene="xray" data-kicker="15 · 보고서 작성">
       <div class="docs">
         <div class="paper-doc"><div class="t"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 80%"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 70%"></div><div class="l"></div><div class="h"></div><div class="l" style="width: 85%"></div><div class="l"></div></div>
         <div class="paper-doc"><div class="t"></div><div class="h"></div><div class="l" style="width: 90%"></div><div class="l"></div><div class="h"></div><div class="l"></div><div class="l"></div><div class="l" style="width: 60%"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 75%"></div></div>
         <div class="paper-doc">
           <div class="t"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 85%"></div><div class="h"></div><div class="l" style="width: 95%"></div><div class="l"></div><div class="l" style="width: 70%"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 80%"></div>
           <div class="bones" data-show="1-" data-delay="2">
-            <span class="title">제목</span><span>1. 추진 배경</span><span>2. 현황 및 문제점</span><span>3. 개선 방안</span><span>4. 추진 계획</span>
+            <span class="title">제목</span><span>Ⅰ. 추진 배경</span><span>Ⅱ. 현황 및 문제점</span><span>Ⅲ. 개선 방향</span><span>Ⅳ. 추진 계획</span>
           </div>
         </div>
         <div class="xscan"></div>
       </div>
-      <div class="bubble-me req-bubble" data-show="1">"우리 대학 공문 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 공문서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐."</div>
-      <div class="bubble-them" style="left: 880px; top: 170px; width: 900px" data-show="2">프롬프트 초안을 만들었어요. 하나만 확인할게요 — 결재 라인은 어떻게 쓸까요?</div>
-      <div class="bubble-me" style="left: 1350px; top: 320px" data-show="2" data-delay="0.7">담당–팀장–처장으로 고정해 줘</div>
+      <div class="bubble-me req-bubble" data-show="1">"우리 대학 보고서 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 보고서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐."</div>
+      <div class="bubble-them" style="left: 880px; top: 170px; width: 900px" data-show="2">프롬프트 초안을 만들었어요. 하나만 확인할게요 — 예산은 어떻게 쓸까요?</div>
+      <div class="bubble-me" style="left: 1350px; top: 320px" data-show="2" data-delay="0.7">있으면 표로, 단위는 천원</div>
       <div class="gen-prompt sheet" data-show="2" data-delay="1.2">
-        <h4>공문서 작성 프롬프트</h4>
+        <h4>보고서 작성 프롬프트</h4>
         <dl>
-          <dt>역할</dt><dd>우리 대학 행정 공문 작성자</dd>
-          <dt>구조</dt><dd>제목 · 1. 추진 배경 · 2. 현황 및 문제점 · 3. 개선 방안 · 4. 추진 계획</dd>
-          <dt>문체</dt><dd>개조식 · ‘~함’ 종결 · 두괄식</dd>
-          <dt>결재</dt><dd>담당–팀장–처장</dd>
+          <dt>역할</dt><dd>우리 대학 행정 보고서 작성자</dd>
+          <dt>구조</dt><dd>제목 · Ⅰ. 추진 배경 · Ⅱ. 현황 및 문제점 · Ⅲ. 개선 방향 · Ⅳ. 추진 계획</dd>
+          <dt>문체</dt><dd>개조식 · □ ○ ※ 기호 · ‘~함’ 종결</dd>
+          <dt>예산</dt><dd>있으면 표로 · 단위 천원</dd>
           <dt>규칙</dt><dd>모호한 부분은 임의로 정하지 말고 묻기</dd>
         </dl>
       </div>
-      <div class="agent-drawer doc-agent" data-show="3"><span>공문서 작성 에이전트</span></div>
+      <div class="agent-drawer doc-agent" data-show="3"><span>보고서 작성 에이전트</span></div>
 
       <div class="captions">
-        <p data-show="0">기존 공문서 몇 개를 보여 주고</p>
+        <p data-show="0">기존 보고서 몇 개를 보여 주고</p>
         <p data-show="1">구조·흐름·문체를 <em>분석</em>하게 한다</p>
         <p data-show="2">AI가 분석 결과로 <em>프롬프트</em>를 쓰고 모호한 건 나에게 묻는다</p>
-        <p data-show="3" class="strong">그 프롬프트로 <em>나만의 공문서 에이전트</em><small>쓰다가 불편한 점은 조금씩 고쳐 간다</small></p>
+        <p data-show="3" class="strong">그 프롬프트로 <em>나만의 보고서 에이전트</em><small>쓰다가 불편한 점은 조금씩 고쳐 간다</small></p>
       </div>
     </section>
 
     <!-- 15 Research first -->
-    <section data-scene="research" data-kicker="15 · 공문서 작성">
+    <section data-scene="research" data-kicker="15 · 보고서 작성">
       <div class="bubble-me" style="left: 800px; top: 130px" data-show="0" data-rise>국가·교육부 차원의 당위성, 목표, 공개 자료를 찾아 줘</div>
       <div class="bubble-me" style="left: 800px; top: 130px" data-show="1" data-rise>현황과 문제점 4가지를 정량적으로 뽑아 줘. 그중에서 내가 고를게</div>
       <div class="rings" data-show="0-2">
@@ -814,9 +803,9 @@
       </div>
       <div class="report sheet" data-show="3" data-rise>
         <h4>AI 플랫폼 도입 계획(안)</h4>
-        <div class="sec">1. 추진 배경</div><div class="l"></div><div class="l" style="width: 80%"></div>
-        <div class="sec">2. 현황 및 문제점</div><div class="slot"></div>
-        <div class="sec">3. 개선 방안</div><div class="l"></div><div class="l" style="width: 70%"></div>
+        <div class="sec">Ⅰ. 추진 배경</div><div class="l"></div><div class="l" style="width: 80%"></div>
+        <div class="sec">Ⅱ. 현황 및 문제점</div><div class="slot"></div>
+        <div class="sec">Ⅲ. 개선 방향</div><div class="l"></div><div class="l" style="width: 70%"></div>
       </div>
 
       <div class="pcard card"><h4>AI 활용 수요 급증</h4><p>교직원 사용 경험 <b>○○%</b></p></div>
@@ -835,19 +824,19 @@
         1) "대학에 AI 플랫폼을 도입하려고 해. 추진 배경으로 쓸 국가·교육부 차원의 당위성, 목표, 공개 자료를 찾아 줘. 거시적 → 미시적 → 그래서 ~해야 한다는 흐름으로."
         2) "위 자료와 연계해 우리 대학 현황과 문제점을 4가지 뽑아 줘. 세상은 빠르게 변하는데 대학 내 지원이 없어 국가 방향과 멀어진다는 관점으로. 정량적으로 표현해 주면 좋겠어. 그중에서 내가 고를게."
         3) "내가 고른 2가지를 바탕으로 개선 방안을 써 줘."
-        단계별로 시켜도, 한 번에 요청해도 된다. 결과는 공문서 에이전트에 넣어 보고서 형태로 받는다.
+        단계별로 시켜도, 한 번에 요청해도 된다. 결과는 보고서 에이전트에 넣어 보고서 형태로 받는다.
       </aside>
     </section>
 
     <!-- Practice 3 -->
-    <section class="practice" data-steps="1" data-kicker="실습 3 · 공문 양식 분석" data-term="7분">
-      <ol class="p-steps" data-show="0-" data-rise><li>실습 자료의 <b>가상 공문 2건</b>을 복사해 붙여 넣는다</li><li>오른쪽 요청을 보낸다</li><li>AI가 되물으면 답한다</li><li>만들어진 프롬프트로 “직원 AI 특강 참석 안내” 공문을 받아 본다</li></ol>
+    <section class="practice" data-steps="1" data-kicker="실습 3 · 보고서 양식 분석" data-term="7분">
+      <ol class="p-steps" data-show="0-" data-rise><li>실습 자료의 <b>가상 보고서 2건</b>을 복사해 붙여 넣는다</li><li>오른쪽 요청을 보낸다</li><li>AI가 되물으면 답한다</li><li>만들어진 프롬프트로 “직원 AI 특강 운영 계획(안)” 보고서를 받아 본다</li></ol>
       <div class="p-prompt" data-show="0-" data-rise data-delay="0.15">
         <span class="p-label">복사해서 붙여 넣기</span>
-        <p>우리 대학 공문 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 공문서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐.</p>
+        <p>우리 대학 보고서 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 보고서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐.</p>
       </div>
       <div class="captions">
-        <p data-show="0" class="strong">프롬프트도 <em>AI에게</em> 쓰게 한다<small>이 프롬프트를 에이전트에 저장하면 나만의 공문서 도우미</small></p>
+        <p data-show="0" class="strong">프롬프트도 <em>AI에게</em> 쓰게 한다<small>이 프롬프트를 에이전트에 저장하면 나만의 보고서 도우미</small></p>
       </div>
       <p class="note p-link" data-show="0-">실습 자료 · 프롬프트와 예시 파일은 <b>practice.html</b></p>
     </section>
@@ -880,8 +869,8 @@
         <div class="tr" data-show="1-" data-delay="2.0"><span>167855</span><span>계란 30구</span><span class="num">9,990</span><span class="num">0</span></div>
         <div class="tr tot" data-show="1-" data-delay="2.3"><span></span><span>합계</span><span class="num">74,440</span><span class="num">8,000</span></div>
       </div>
-      <div class="checkbox" style="left: 212px; top: 560px; width: 416px; height: 54px" data-show="2"></div>
-      <div class="checkbox" style="left: 1390px; top: 550px; width: 380px; height: 62px" data-show="2"></div>
+      <div class="checkbox" data-show="2"></div>
+      <div class="checkbox" data-show="2"></div>
 
       <div class="captions">
         <p data-show="0">긴 영수증에서 필요한 것만 뽑으려면<small>무엇을, 어떤 형태로 받을지 분명하게</small></p>
@@ -998,8 +987,30 @@
       </ol>
       <div class="captions">
         <p data-show="0">AI의 답을 쓸 때</p>
-        <p data-show="3" class="strong">책임은 <em>사람</em>에게 남는다</p>
+        <p data-show="3" class="strong">책임은 <em>사람</em>이 진다</p>
       </div>
+    </section>
+
+    <!-- 18 Chain: an AI draft leaves the school under people's names -->
+    <section data-steps="3" data-kicker="18 · 판단과 책임">
+      <div class="chain">
+        <div class="st ai"><small>AI</small>초안</div>
+        <svg class="i"><use href="#i-arrow-right"/></svg>
+        <div class="st"><small>나</small>검토·수정</div>
+        <svg class="i"><use href="#i-arrow-right"/></svg>
+        <div class="st"><small>팀장·처장</small>결재</div>
+        <svg class="i"><use href="#i-arrow-right"/></svg>
+        <div class="st"><small>학교 밖</small>발송</div>
+      </div>
+      <div class="flag" data-show="1-" data-rise><svg class="i"><use href="#i-x"/></svg>없는 조항 발견</div>
+      <div class="no-duty" data-show="2" data-rise>책임지지 않는다</div>
+      <div class="duty" data-show="2" data-rise data-delay="0.3"><span>책임</span></div>
+      <div class="captions">
+        <p data-show="0">AI 초안이 결재를 거쳐 <em>학교 밖</em>으로 나간다</p>
+        <p data-show="1">나중에 없는 조항이 발견되면, 누구 책임일까?</p>
+        <p data-show="2" class="strong">책임은 <em>이름을 올린 사람</em>이 진다<small>AI 산출물도 검토해 내보내는 순간 내 문서가 된다</small></p>
+      </div>
+      <aside class="notes">6장의 가짜 조항 사례와 연결한다. "AI가 썼다"는 면책 사유가 되지 않는다.</aside>
     </section>
 
     <!-- 19 Same answer -->

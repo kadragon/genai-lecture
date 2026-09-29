@@ -5,7 +5,9 @@
   const CELL = 30, LINES = 19, HALF = CELL * (LINES - 1) / 2;
   // First move on the lower-left star point (4-4), where real games open.
   const CX = BX - HALF + 3 * CELL, CY = BY + HALF - 3 * CELL;
-  const CHOSEN = [0, 7, 6];            // level-1 branches that survive pruning: right, up-right, up
+  // Branches fan from the corner into the board only: 0° (right) to -90° (up).
+  const FAN = 90, SPREAD = 36;
+  const CHOSEN = [1, 4, 6];            // level-1 branches that survive pruning: low, diagonal, steep
   const CHOSEN_CHILD = 1;              // which level-2 child continues each chain
   const CHIP_W = 124, CHIP_H = 56;     // keep in sync with .chip in deck.css
 
@@ -58,11 +60,11 @@
       return node;
     };
     for (let i = 0; i < 8; i++) {
-      const b1 = branch(CX, CY, i * 45 + jitter(10), 210, 0);
+      const b1 = branch(CX, CY, -i * FAN / 7 + jitter(3), 210, 0);
       for (let j = 0; j < 4; j++) {
-        const b2 = branch(b1.x1, b1.y1, b1.angleDeg - 45 + j * 30 + jitter(6), 165, 1);
+        const b2 = branch(b1.x1, b1.y1, b1.angleDeg - SPREAD + j * (SPREAD * 2 / 3) + jitter(4), 165, 1);
         b1.children.push(b2);
-        for (let k = 0; k < 3; k++) branch(b2.x1, b2.y1, b2.angleDeg - 30 + k * 30 + jitter(6), 125, 2);
+        for (let k = 0; k < 3; k++) branch(b2.x1, b2.y1, b2.angleDeg - SPREAD + k * SPREAD + jitter(4), 125, 2);
       }
     }
     el('circle', { cx: CX, cy: CY, r: 13, class: 'stone' }, tree);

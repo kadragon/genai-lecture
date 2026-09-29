@@ -37,7 +37,8 @@
       go(r.scan, { opacity: 0 }, true);
     }
     go(r.fill, { width: step >= 1 ? '92%' : '12%' }, instant, { duration: 2.2, delay: late(1.2), ease: 'linear' });
-    r.coins.forEach((c, i) => go(c, { opacity: step >= 1 ? 1 : 0, scale: step >= 1 ? 1 : 0.4 }, instant, { duration: 0.3, delay: late(step >= 1 ? 1.4 + i * 0.3 : 0) }));
+    // Coins fill from the bottom one after another while the re-read bar grows.
+    r.coins.forEach((c, i) => go(c, { backgroundPosition: step >= 1 ? '0% 100%' : '0% 0%' }, instant, { duration: 0.5, delay: late(step >= 1 ? 1.3 + i * 0.3 : 0), ease: 'easeOut' }));
 
     const blurred = step >= 2;
     MIDDLE.forEach((i) => go(r.lines[i], { opacity: blurred ? 0.15 : 1, filter: blurred ? 'blur(4px)' : 'blur(0px)' }, instant, { duration: 1.2, delay: late(blurred ? 0.3 : 0) }));

@@ -1,4 +1,5 @@
-// Ch.2 GPU: why learning needs compute, then one brush vs thousands; pixels are numbers.
+// Ch.2 GPU: why learning needs compute, text and pictures are stored as numbers,
+// then one brush vs thousands; pixels are numbers.
 (() => {
   const INVADER = [
     '..a.....a..',
@@ -47,14 +48,14 @@
     const { go } = Stepper;
     const paint = (pixes, delayOf) => pixes.forEach((p, i) => {
       const c = r.cells[i];
-      const bg = step <= 1 ? BLANK : step === 2 ? COLORS[c] : DIM[c];
-      go(p, { backgroundColor: bg }, instant, { duration: 0.2, delay: instant || step !== 2 ? 0 : delayOf(i) });
+      const bg = step <= 2 ? BLANK : step === 3 ? COLORS[c] : DIM[c];
+      go(p, { backgroundColor: bg }, instant, { duration: 0.2, delay: instant || step !== 3 ? 0 : delayOf(i) });
     });
     paint(r.cpu, (i) => i * 0.028);   // one brush: ~7s for the whole picture
     paint(r.gpu, (i) => r.gpuDelay[i]); // thousands of brushes: under half a second
 
-    go(r.digits, { opacity: step >= 3 ? 1 : 0 }, instant, { duration: 0.4, delay: instant || step < 3 ? 0 : Motion.stagger(0.002) });
+    go(r.digits, { opacity: step >= 4 ? 1 : 0 }, instant, { duration: 0.4, delay: instant || step < 4 ? 0 : Motion.stagger(0.002) });
   };
 
-  Stepper.register('gpu', { steps: 4, setup, render });
+  Stepper.register('gpu', { steps: 5, setup, render });
 })();
