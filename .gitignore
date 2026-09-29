@@ -2,3 +2,5 @@ node_modules/
 vendor/
 .playwright-mcp/
 .DS_Store
+backlog.md
+lecture-deck-review-*.md
