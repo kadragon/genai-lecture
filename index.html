@@ -85,7 +85,7 @@
         <p data-show="1">컴퓨터는 글자도, 그림도 <em>숫자</em>로 저장한다<small>그러니 배우는 일도 결국 숫자 계산</small></p>
         <p data-show="2">그 계산을 잘하는 부품이 게임용 그래픽카드<small>게임 화면은 수백만 개의 점(픽셀)</small></p>
         <p data-show="3">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
-        <p data-show="4" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다</p>
+        <p data-show="4" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다<small>점마다 숫자 — 여기서는 0과 1로 줄여 표시</small></p>
       </div>
       <aside class="notes">1단계: '가'는 컴퓨터 안에서 44032, 파란 점 하나는 빨강·초록·파랑 세 숫자. 4단계: 오른쪽 위 문구에서 NVIDIA 주가 이야기를 말로 가볍게.</aside>
     </section>
@@ -770,15 +770,15 @@
         <div class="xscan"></div>
       </div>
       <div class="bubble-me req-bubble" data-show="1">"우리 대학 보고서 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 보고서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐."</div>
-      <div class="bubble-them" style="left: 880px; top: 170px; width: 900px" data-show="2">프롬프트 초안을 만들었어요. 하나만 확인할게요 — 예산은 어떻게 쓸까요?</div>
-      <div class="bubble-me" style="left: 1350px; top: 320px" data-show="2" data-delay="0.7">있으면 표로, 단위는 천원</div>
+      <div class="bubble-them" style="left: 880px; top: 170px; width: 900px" data-show="2">프롬프트 초안을 만들었어요. 하나만 확인할게요 — 작성자 표기는 넣을까요?</div>
+      <div class="bubble-me" style="left: 1350px; top: 320px" data-show="2" data-delay="0.7">제목 아래에 부서·이름·내선으로</div>
       <div class="gen-prompt sheet" data-show="2" data-delay="1.2">
         <h4>보고서 작성 프롬프트</h4>
         <dl>
           <dt>역할</dt><dd>우리 대학 행정 보고서 작성자</dd>
           <dt>구조</dt><dd>제목 · Ⅰ. 추진 배경 · Ⅱ. 현황 및 문제점 · Ⅲ. 개선 방향 · Ⅳ. 추진 계획</dd>
           <dt>문체</dt><dd>개조식 · □ ○ ※ 기호 · ‘~함’ 종결</dd>
-          <dt>예산</dt><dd>있으면 표로 · 단위 천원</dd>
+          <dt>표기</dt><dd>제목 아래 〈부서 이름 내선〉</dd>
           <dt>규칙</dt><dd>모호한 부분은 임의로 정하지 말고 묻기</dd>
         </dl>
       </div>
@@ -1000,15 +1000,15 @@
         <svg class="i"><use href="#i-arrow-right"/></svg>
         <div class="st"><small>팀장·처장</small>결재</div>
         <svg class="i"><use href="#i-arrow-right"/></svg>
-        <div class="st"><small>학교 밖</small>발송</div>
+        <div class="st"><small>학교 안팎</small>공유</div>
       </div>
       <div class="flag" data-show="1-" data-rise><svg class="i"><use href="#i-x"/></svg>없는 조항 발견</div>
       <div class="no-duty" data-show="2" data-rise>책임지지 않는다</div>
       <div class="duty" data-show="2" data-rise data-delay="0.3"><span>책임</span></div>
       <div class="captions">
-        <p data-show="0">AI 초안이 결재를 거쳐 <em>학교 밖</em>으로 나간다</p>
+        <p data-show="0">AI 초안이 결재를 거쳐 <em>공유</em>된다</p>
         <p data-show="1">나중에 없는 조항이 발견되면, 누구 책임일까?</p>
-        <p data-show="2" class="strong">책임은 <em>이름을 올린 사람</em>이 진다<small>AI 산출물도 검토해 내보내는 순간 내 문서가 된다</small></p>
+        <p data-show="2" class="strong">"AI가 썼다"는 <em>면책</em>이 되지 않는다<small>AI 산출물도 검토해 내보내는 순간 내 문서가 된다</small></p>
       </div>
       <aside class="notes">6장의 가짜 조항 사례와 연결한다. "AI가 썼다"는 면책 사유가 되지 않는다.</aside>
     </section>

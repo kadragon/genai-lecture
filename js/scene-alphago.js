@@ -6,7 +6,9 @@
   // First move on the lower-left star point (4-4), where real games open.
   const CX = BX - HALF + 3 * CELL, CY = BY + HALF - 3 * CELL;
   // Branches fan from the corner into the board only: 0° (right) to -90° (up).
-  const FAN = 90, SPREAD = 36;
+  // Every level is clamped to that quadrant, and the three lengths sum to the board span.
+  const FAN = 90, SPREAD = 36, LEN = [190, 150, 110];
+  const inBoard = (deg) => Math.max(-88, Math.min(-2, deg));
   const CHOSEN = [1, 4, 6];            // level-1 branches that survive pruning: low, diagonal, steep
   const CHOSEN_CHILD = 1;              // which level-2 child continues each chain
   const CHIP_W = 124, CHIP_H = 56;     // keep in sync with .chip in deck.css
@@ -60,11 +62,11 @@
       return node;
     };
     for (let i = 0; i < 8; i++) {
-      const b1 = branch(CX, CY, -i * FAN / 7 + jitter(3), 210, 0);
+      const b1 = branch(CX, CY, inBoard(-i * FAN / 7 + jitter(3)), LEN[0], 0);
       for (let j = 0; j < 4; j++) {
-        const b2 = branch(b1.x1, b1.y1, b1.angleDeg - SPREAD + j * (SPREAD * 2 / 3) + jitter(4), 165, 1);
+        const b2 = branch(b1.x1, b1.y1, inBoard(b1.angleDeg - SPREAD + j * (SPREAD * 2 / 3) + jitter(4)), LEN[1], 1);
         b1.children.push(b2);
-        for (let k = 0; k < 3; k++) branch(b2.x1, b2.y1, b2.angleDeg - SPREAD + k * SPREAD + jitter(4), 125, 2);
+        for (let k = 0; k < 3; k++) branch(b2.x1, b2.y1, inBoard(b2.angleDeg - SPREAD + k * SPREAD + jitter(4)), LEN[2], 2);
       }
     }
     el('circle', { cx: CX, cy: CY, r: 13, class: 'stone' }, tree);
