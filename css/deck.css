@@ -328,9 +328,9 @@ sup { font-size: 0.55em; }
 .effort-area svg { position: absolute; left: 0; top: 130px; width: 880px; height: 460px; overflow: visible; }
 .effort-area .stairs { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
 .ui-shot.a { left: 0; top: 0; }
-.ui-shot.a img { width: 400px; }
-.ui-shot.b { left: 460px; top: 0; }
-.ui-shot.b img { width: 400px; }
+.ui-shot.a img { width: 330px; }
+.ui-shot.b { left: 400px; top: 0; }
+.ui-shot.b img { width: 480px; }
 .ok { position: absolute; left: 700px; top: 110px; display: flex; align-items: center; gap: 10px; font-size: 38px; font-weight: 700; color: var(--accent); }
 
 .greet { left: var(--gutter); top: 170px; }
