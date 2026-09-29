@@ -161,6 +161,7 @@ sup { font-size: 0.55em; }
 .title-block { position: absolute; left: var(--gutter); bottom: 150px; width: 1100px; }
 .title-main { margin: 0; font-size: var(--t-display); font-weight: 700; letter-spacing: -0.05em; line-height: 1.04; }
 .title-sub { margin: 36px 0 0; font-size: 34px; font-weight: 500; color: var(--muted); letter-spacing: -0.015em; }
+.title-hint { display: inline-block; margin: 28px 0 0; padding: 10px 20px; border-left: 4px solid var(--accent); background: var(--accent-soft); font-size: 26px; font-weight: 600; color: var(--accent); }
 .title-toc { position: absolute; left: 1320px; right: var(--gutter); top: 204px; display: grid; font-size: 26px; font-weight: 500; color: var(--ink-2); }
 .title-toc span { display: flex; gap: var(--s-3); padding: 14px 0; border-bottom: var(--hair) solid var(--rule); }
 .title-toc b { order: -1; width: 40px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -653,3 +654,14 @@ sup { font-size: 0.55em; }
 .tier.t-keep h3, .tier.t-mask h3 { color: var(--accent); }
 .tier ul { margin: 0; padding: 0; list-style: none; }
 .tier li { padding: 18px 0; border-top: var(--hair) solid var(--rule); font-size: var(--t-body); line-height: 1.35; }
+
+/* Practice: one layout for every hands-on stop */
+.practice .p-steps { position: absolute; left: var(--gutter); top: 190px; width: 780px; margin: 0; padding: 0; list-style: none; counter-reset: p; }
+.practice .p-steps li { position: relative; padding: 22px 0 22px 72px; border-top: var(--hair) solid var(--rule); font-size: var(--t-body); line-height: 1.4; counter-increment: p; }
+.practice .p-steps li::before { content: counter(p); position: absolute; left: 0; top: 18px; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 24px; font-weight: 700; }
+.practice .p-prompt { position: absolute; left: 1000px; right: var(--gutter); top: 190px; padding: 40px 44px; box-sizing: border-box; border: 3px solid var(--accent); border-radius: var(--radius); background: var(--surface); }
+.practice .p-label { display: block; margin-bottom: 18px; font-size: var(--t-label); font-weight: 600; color: var(--accent); letter-spacing: var(--track-label); }
+.practice .p-prompt p { margin: 0; font-size: 34px; font-weight: 600; line-height: 1.5; letter-spacing: -0.02em; }
+.practice .p-link b { color: var(--accent); }
+.practice .p-steps, .practice .p-prompt p { word-break: keep-all; }
+.practice .p-steps b { font-weight: 700; color: var(--accent); }

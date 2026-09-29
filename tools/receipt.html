@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>실습용 가상 영수증</title>
+<!-- Source for assets/practice-receipt.png. Totals must stay consistent:
+     gross 145,970 − discounts 11,000 = 134,970. -->
+<style>
+  body { margin: 0; padding: 40px; background: #ddd; }
+  .r { width: 420px; padding: 28px 26px 34px; background: #fff; font: 15px/1.55 'Apple SD Gothic Neo', 'Noto Sans KR', monospace; color: #222; }
+  h1 { margin: 0; text-align: center; font-size: 22px; letter-spacing: 0.1em; }
+  .c { text-align: center; }
+  .m { color: #666; font-size: 13px; }
+  hr { border: 0; border-top: 1px dashed #888; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 2px 0; vertical-align: top; }
+  td.n { text-align: right; white-space: nowrap; }
+  tr.d td { color: #444; }
+  .tot td { font-weight: 700; font-size: 17px; }
+</style>
+</head>
+<body>
+<div class="r" id="receipt">
+  <h1>가나마트</h1>
+  <p class="c m">실습용 가상 영수증 · 실제 매장 아님<br>2026-09-21 14:32 · POS 03</p>
+  <hr>
+  <table>
+    <tr><td>품목</td><td class="n">수량</td><td class="n">금액</td></tr>
+  </table>
+  <hr>
+  <table>
+    <tr><td>A4 복사용지 2500매<br><span class="m">@24,900</span></td><td class="n">2</td><td class="n">49,800</td></tr>
+    <tr class="d"><td>&nbsp;&nbsp;행사할인</td><td></td><td class="n">-5,000</td></tr>
+    <tr><td>볼펜 흑색 12입<br><span class="m">@6,500</span></td><td class="n">3</td><td class="n">19,500</td></tr>
+    <tr><td>점착 메모지 대형</td><td class="n">1</td><td class="n">12,900</td></tr>
+    <tr class="d"><td>&nbsp;&nbsp;행사할인</td><td></td><td class="n">-2,000</td></tr>
+    <tr><td>생수 2L×6<br><span class="m">@5,980</span></td><td class="n">4</td><td class="n">23,920</td></tr>
+    <tr><td>커피믹스 180T</td><td class="n">1</td><td class="n">29,900</td></tr>
+    <tr class="d"><td>&nbsp;&nbsp;회원할인</td><td></td><td class="n">-4,000</td></tr>
+    <tr><td>물티슈 100매<br><span class="m">@1,990</span></td><td class="n">5</td><td class="n">9,950</td></tr>
+  </table>
+  <hr>
+  <table>
+    <tr><td>상품 금액</td><td class="n">145,970</td></tr>
+    <tr><td>할인 합계</td><td class="n">-11,000</td></tr>
+    <tr class="tot"><td>결제 금액</td><td class="n">134,970</td></tr>
+  </table>
+  <hr>
+  <p class="c m">카드 결제 · 일시불<br>교환·환불은 영수증 지참 7일 이내</p>
+</div>
+</body>
+</html>

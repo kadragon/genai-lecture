@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>생성형 AI 특강 실습</title>
+<!-- Attendee handout for the four practice stops in index.html.
+     Self-contained on purpose: it is shared on its own, without vendor/. -->
+<style>
+  :root {
+    --paper: #f4f1ea; --surface: #fbfaf6; --ink: #16171a; --muted: #6c6d72;
+    --rule: rgba(22, 23, 26, 0.14); --accent: #2346d1; --accent-soft: rgba(35, 70, 209, 0.08); --on-accent: #f7f5ef;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; word-break: keep-all; }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 16px 96px; }
+  h1 { margin: 0 0 6px; font-size: 34px; letter-spacing: -0.03em; }
+  .lead { margin: 0 0 40px; color: var(--muted); }
+  section { margin: 0 0 40px; padding-top: 28px; border-top: 2px solid var(--ink); }
+  h2 { margin: 0 0 4px; font-size: 24px; letter-spacing: -0.02em; }
+  h2 small { margin-left: 8px; font-size: 15px; font-weight: 600; color: var(--accent); }
+  .why { margin: 0 0 16px; color: var(--muted); }
+  ol { margin: 0 0 18px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .box { position: relative; margin: 12px 0; padding: 18px 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+  .box.prompt { border: 2px solid var(--accent); }
+  .box .tag { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; color: var(--accent); }
+  .box pre { margin: 0; white-space: pre-wrap; font: inherit; }
+  button.copy { position: absolute; top: 12px; right: 12px; padding: 6px 14px; border: 0; border-radius: 6px; background: var(--accent); color: var(--on-accent); font: 600 14px/1 inherit; font-family: inherit; cursor: pointer; }
+  button.copy.done { background: var(--ink); }
+  .dl { display: inline-block; margin: 6px 0 12px; padding: 10px 18px; border-radius: 6px; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
+  .fig { display: block; max-width: 260px; margin: 8px 0; border: 1px solid var(--rule); }
+  .check { padding: 12px 16px; border-left: 4px solid var(--accent); background: var(--accent-soft); }
+  .note { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>생성형 AI 특강 실습</h1>
+  <p class="lead">슬라이드의 실습 번호를 따라가세요. 회색 상자는 예시 자료, 파란 상자는 AI에게 보낼 요청입니다. <b>복사</b> 버튼으로 옮겨 붙이면 됩니다.</p>
+
+  <section>
+    <h2>시작 전</h2>
+    <ol>
+      <li>wrks에 로그인해 둡니다.</li>
+      <li>실습마다 <b>새 채팅</b>에서 시작합니다. 앞 실습의 대화가 섞이지 않게 하기 위해서입니다.</li>
+      <li>예시 자료는 모두 <b>가상</b>입니다. 실습에 실제 개인정보나 내부 문서는 넣지 않습니다.</li>
+    </ol>
+  </section>
+
+  <section id="p1">
+    <h2>실습 1 · 또렷하게 요청하기<small>5분</small></h2>
+    <p class="why">같은 메일을 두 번 맡겨, 요청 한 줄이 답을 얼마나 바꾸는지 봅니다.</p>
+    <ol>
+      <li>아래 예시 메일을 복사해 “이 메일 어때? 검토해줘”와 함께 보냅니다.</li>
+      <li>새 채팅을 열고 파란 상자의 요청과 예시 메일을 함께 보냅니다.</li>
+      <li>두 답을 나란히 놓고 비교합니다.</li>
+    </ol>
+    <div class="box"><span class="tag">예시 메일 (가상)</span><button class="copy">복사</button><pre>원장님 안녕하십니까. 교무과 김○○입니다.
+다름이 아니오라 지난번 회의에서 말씀하신 학사일정 관련해서 여러 부서의 의견을 모아보았는데 부서마다 입장이 조금씩 달라서 정리하는대 시간이 좀 걸렸습니다. 교무과는 10월 중순을 희망하고 학생과는 11월초를 원하고 있으며 기획팀은 일정보다 예산 확보가 먼저라는 의견이였습니다. 그래서 한번 모여서 논의하는게 좋을것 같은데 혹시 다음주 화요일 오후 2시에 시간 되시는지 여쭙고자 연락드렸습니다.
+바쁘시겠지만 회신 부탁드립니다. 감사합니다.</pre></div>
+    <div class="box prompt"><span class="tag">요청</span><button class="copy">복사</button><pre>원장님께 보낼 메일이야. 교정·교열해 주고, 두괄식으로 썼는지도 확인해줘.</pre></div>
+  </section>
+
+  <section id="p2">
+    <h2>실습 2 · AI가 묻게 하기<small>5분</small></h2>
+    <p class="why">내가 다 쓰지 않고, 필요한 정보를 AI가 물어보게 합니다.</p>
+    <ol>
+      <li>파란 상자의 요청을 보냅니다.</li>
+      <li>AI의 질문에 하나씩 답합니다. 날짜·과목은 지어내도 됩니다.</li>
+      <li>공지가 나오면 한 군데를 분명하게 고쳐 달라고 합니다.</li>
+      <li>마지막으로 두 번째 파란 상자를 보냅니다. 그 답이 다음 번 프롬프트입니다.</li>
+    </ol>
+    <div class="box prompt"><span class="tag">요청</span><button class="copy">복사</button><pre>학생들에게 보낼 휴강 공지를 쓰려고 해. 쓰기 전에 필요한 정보를 나에게 하나씩 물어봐 줘.</pre></div>
+    <div class="box prompt"><span class="tag">마지막 요청</span><button class="copy">복사</button><pre>다음에도 이렇게 받으려면 어떻게 요청하면 돼?</pre></div>
+  </section>
+
+  <section id="p3">
+    <h2>실습 3 · 공문 양식 분석<small>7분</small></h2>
+    <p class="why">공문을 직접 쓰기 전에, 양식을 분석해 프롬프트부터 만들게 합니다.</p>
+    <ol>
+      <li>아래 가상 공문 2건을 복사해 붙여 넣고, 파란 상자의 요청을 함께 보냅니다.</li>
+      <li>AI가 되물으면 답합니다.</li>
+      <li>만들어진 프롬프트로 “직원 AI 특강 참석 안내” 공문을 받아 봅니다.</li>
+    </ol>
+    <div class="box"><span class="tag">가상 공문 1</span><button class="copy">복사</button><pre>수신  각 학과(부)장
+제목  2026학년도 2학기 학생상담 주간 운영 안내
+
+1. 관련: 학생생활지원센터-1234(2026. 9. 1.)
+2. 위 호와 관련하여 2026학년도 2학기 학생상담 주간을 아래와 같이 운영하오니, 소속 학생들이 참여할 수 있도록 안내하여 주시기 바랍니다.
+  가. 기간: 2026. 10. 12.(월) ~ 10. 16.(금)
+  나. 장소: 학생회관 2층 상담실
+  다. 대상: 재학생 전체
+  라. 신청: 통합정보시스템 > 학생상담 > 상담 신청
+3. 문의: 학생생활지원센터(☎ 000-0000)
+
+붙임  학생상담 주간 안내 포스터 1부.  끝.</pre></div>
+    <div class="box"><span class="tag">가상 공문 2</span><button class="copy">복사</button><pre>수신  각 부서장
+제목  2026년 하반기 직원 정보보호 교육 실시 알림
+
+1. 관련: 「개인정보 보호법」 제28조(개인정보취급자에 대한 감독)
+2. 2026년 하반기 직원 정보보호 교육을 아래와 같이 실시하오니, 소속 직원이 빠짐없이 이수하도록 협조하여 주시기 바랍니다.
+  가. 일시: 2026. 11. 5.(목) 14:00~16:00
+  나. 장소: 본관 3층 대회의실
+  다. 대상: 전 직원 및 조교
+  라. 내용: 개인정보 유출 사례와 예방 수칙
+3. 교육 미이수자는 온라인 보충 교육을 이수하여야 합니다.
+
+붙임  교육 참석자 명단 양식 1부.  끝.</pre></div>
+    <div class="box prompt"><span class="tag">요청</span><button class="copy">복사</button><pre>우리 대학 공문 양식이야. 구조, 내용 흐름, 문체를 분석해서, 이런 공문서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐.</pre></div>
+  </section>
+
+  <section id="p4">
+    <h2>실습 4 · 영수증 정리와 검증<small>5분</small></h2>
+    <p class="why">뽑는 일은 AI에게, 맞추는 일은 내가 합니다.</p>
+    <ol>
+      <li>영수증 이미지를 내려받아 채팅에 첨부합니다.</li>
+      <li>파란 상자의 요청을 보냅니다.</li>
+      <li>표의 금액을 계산기로 더해 영수증의 <b>상품 금액·할인 합계·결제 금액</b>과 맞춰 봅니다.</li>
+      <li>틀린 곳이 있으면 어디가 틀렸는지 알려 주고 다시 받습니다.</li>
+    </ol>
+    <a class="dl" href="assets/practice-receipt.png" download="실습-영수증.png">영수증 이미지 내려받기</a>
+    <img class="fig" src="assets/practice-receipt.png" alt="실습용 가상 영수증: 가나마트, 6개 품목, 결제 금액 134,970원">
+    <div class="box prompt"><span class="tag">요청</span><button class="copy">복사</button><pre>마트 영수증이야. 품목명, 수량, 원래 금액, 할인 금액을 표로 뽑아 줘.</pre></div>
+  </section>
+
+  <section id="homework">
+    <h2>이번 주 과제</h2>
+    <p class="why">강의에서 본 순서를 내 업무 하나로 한 번 돌려 봅니다.</p>
+    <ol>
+      <li>개인정보가 없는 내 업무 하나를 고릅니다. 공지, 안내 메일, 회의 자료 초안 등.</li>
+      <li>편하게 요청하고, 안 맞는 곳은 분명하게 고쳐 달라고 합니다.</li>
+      <li>마음에 드는 결과가 나오면 아래 요청을 보내고, 그 답을 저장해 둡니다.</li>
+    </ol>
+    <div class="box prompt"><span class="tag">요청</span><button class="copy">복사</button><pre>지금까지 한 걸 다음에도 쓸 수 있게 프롬프트(지침)로 정리해 줘.</pre></div>
+    <p class="check">넣기 전에 확인: 공개 자료는 그대로, 사람이 드러나는 정보는 가리고, 주민번호·계좌·비공개 문서는 넣지 않습니다. 애매하면 넣지 않습니다.</p>
+    <p class="note">참고: 개인정보보호위원회 「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」(2026. 5.) · 국가정보원 「챗GPT 등 생성형 AI 활용 보안 가이드라인」(2023. 6.)</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('button.copy').forEach((b) => {
+    b.addEventListener('click', async () => {
+      const text = b.parentElement.querySelector('pre').textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        // file:// and older browsers: select the text so Ctrl+C still works
+        const r = document.createRange();
+        r.selectNodeContents(b.parentElement.querySelector('pre'));
+        getSelection().removeAllRanges(); getSelection().addRange(r);
+        b.textContent = 'Ctrl+C';
+        return;
+      }
+      b.textContent = '복사됨'; b.classList.add('done');
+      setTimeout(() => { b.textContent = '복사'; b.classList.remove('done'); }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
