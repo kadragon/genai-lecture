@@ -585,7 +585,7 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .xl .th { border-bottom: var(--line) solid var(--ink); font-size: var(--t-label); font-weight: 600; color: var(--muted); letter-spacing: var(--track-label); }
 .xl .num { text-align: right; font-variant-numeric: tabular-nums; }
 .xl .tot { font-weight: 700; color: var(--accent); border-bottom: var(--line) solid var(--ink); }
-.checkbox { position: absolute; border: 3px solid var(--accent); border-radius: var(--radius); }
+.checkbox { position: absolute; border: 3px solid var(--accent); border-radius: var(--radius); box-sizing: border-box; }
 
 /* ═══ Part Ⅳ ══════════════════════════════════════════════════════════ */
 /* 17 privacy */
