@@ -633,3 +633,13 @@ sup { font-size: 0.55em; }
 @media (prefers-reduced-motion: reduce) {
   .cursor, .cursor-fly { animation: none; }
 }
+
+/* 11 Agent inside */
+.agent-shot { position: absolute; top: 170px; margin: 0; }
+.agent-shot img { display: block; width: 640px; border: var(--hair) solid var(--rule-2); border-radius: var(--radius-2); background: var(--surface); }
+.agent-shot figcaption { margin-top: 14px; font-size: var(--t-label); font-weight: 600; color: var(--muted); letter-spacing: var(--track-label); }
+.agent-shot.files { left: var(--gutter); }
+.agent-shot.prompt { left: 860px; }
+.agent-shot.prompt img { width: 600px; }
+/* covers the "근거를 찾지 못했다면 … 낫다" lines of the 600px-wide capture */
+.agent-shot .hl { position: absolute; left: 10px; width: 580px; top: 408px; height: 52px; border: 3px solid var(--accent); border-radius: 6px; background: var(--accent-soft); pointer-events: none; }
