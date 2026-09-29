@@ -647,6 +647,13 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 }
 
 /* 11 Agent inside */
+.wrks-shot { position: absolute; left: var(--gutter); top: 150px; width: 1040px; margin: 0; }
+.wrks-shot img { display: block; width: 100%; border: var(--hair) solid var(--rule-2); border-radius: var(--radius-2); }
+.wrks-shot .pin { position: absolute; display: grid; place-items: center; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 22px; font-weight: 700; box-shadow: 0 0 0 4px var(--paper); }
+.wrks-callouts { position: absolute; left: 1220px; top: 150px; width: 580px; margin: 0; padding: 0; list-style: none; counter-reset: callout; }
+.wrks-callouts li { display: grid; grid-template-columns: 52px 1fr; column-gap: 4px; padding: 16px 0; border-top: var(--hair) solid var(--rule); font-size: 24px; color: var(--ink-2); counter-increment: callout; }
+.wrks-callouts li::before { content: counter(callout); grid-row: span 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 22px; font-weight: 700; }
+.wrks-callouts b { font-size: 30px; color: var(--ink); letter-spacing: -0.02em; }
 .agent-shot { position: absolute; top: 170px; margin: 0; }
 .agent-shot img { display: block; width: 640px; border: var(--hair) solid var(--rule-2); border-radius: var(--radius-2); background: var(--surface); }
 .agent-shot figcaption { margin-top: 14px; font-size: var(--t-label); font-weight: 600; color: var(--muted); letter-spacing: var(--track-label); }
