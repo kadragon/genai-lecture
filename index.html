@@ -705,7 +705,7 @@
         <p data-show="1">② 안 맞으면 <em>분명하게</em> 고쳐 달라고 한다</p>
         <p data-show="2">③ 여러 번 대화하며 완성본으로 다가간다</p>
         <p data-show="3">④ 다음에도 쓸 것 같으면 <em>지침</em>으로 정리해 달라고 한다</p>
-        <p data-show="4" class="strong">한 번에 완성하지 않는다. <em>쌓는다</em></p>
+        <p data-show="4" class="strong">한 번에 완성하지 않는다. <em>쌓는다</em><small>새로 쓰는 일에 돌리고, 반복하는 일은 쌓아 둔 지침으로 바로 처리</small></p>
       </div>
     </section>
 
@@ -879,7 +879,7 @@
       </div>
       <div class="door in" data-show="2-" data-rise>
         <h4>wrks</h4><p>학교 안</p>
-        <div class="verdict">[확인] 넣어도 되는 범위</div>
+        <div class="verdict">가린 뒤, 필요한 만큼만</div>
       </div>
       <div class="door out" data-show="2-" data-rise data-delay="0.2">
         <h4>외부 서비스</h4><p>ChatGPT 등</p>
@@ -889,8 +889,31 @@
       <div class="captions">
         <p data-show="0">학생 성적, 주민번호, 인사 자료…<small>넣어도 될까?</small></p>
         <p data-show="1">꼭 넣어야 하면 <em>가리고</em> 넣는다</p>
-        <p data-show="2" class="strong">어디에, 무엇을 넣는지 <em>구분</em>한다<small>[확인] wrks 데이터 처리 정책 · 개인정보보호위원회·교육부 안내서</small></p>
+        <p data-show="2" class="strong">어디에, 무엇을 넣는지 <em>구분</em>한다<small>학교 안 서비스라도 개인정보는 가리는 것이 기본</small></p>
       </div>
+    </section>
+
+    <!-- 17 Three tiers: public guides only, no wrks-specific claims -->
+    <section data-steps="4" data-kicker="17 · 개인정보">
+      <div class="tier t-keep" data-show="0-" data-rise>
+        <h3>그대로</h3>
+        <ul><li>공개된 공지·규정</li><li>개인정보 없는 내 초안</li><li>공개 통계·보도자료</li></ul>
+      </div>
+      <div class="tier t-mask" data-show="1-" data-rise>
+        <h3>가리고</h3>
+        <ul><li>이름 → 홍○○</li><li>학번·사번·연락처 → ***</li><li>성적·상담 내용 → 누구인지 모르게</li></ul>
+      </div>
+      <div class="tier t-drop" data-show="2-" data-rise>
+        <h3>넣지 않음</h3>
+        <ul><li>주민번호·계좌·카드번호</li><li>비공개 문서 (인사·감사·입찰)</li><li>아이디·비밀번호</li></ul>
+      </div>
+      <div class="captions">
+        <p data-show="0">공개된 자료는 <em>그대로</em> 넣는다</p>
+        <p data-show="1">사람이 드러나는 정보는 <em>가리고</em> 넣는다</p>
+        <p data-show="2">가려도 위험한 정보는 <em>넣지 않는다</em></p>
+        <p data-show="3" class="strong">애매하면 <em>넣지 않는다</em><small>학교 지침이 있으면 그것을 먼저 따른다</small></p>
+      </div>
+      <p class="note" data-show="0-">참고: 개인정보보호위원회 「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」(2026. 5.) · 국가정보원 「챗GPT 등 생성형 AI 활용 보안 가이드라인」(2023. 6.)</p>
     </section>
 
     <!-- 18 Stamp -->

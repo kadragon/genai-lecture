@@ -643,3 +643,13 @@ sup { font-size: 0.55em; }
 .agent-shot.prompt img { width: 600px; }
 /* covers the "근거를 찾지 못했다면 … 낫다" lines of the 600px-wide capture */
 .agent-shot .hl { position: absolute; left: 10px; width: 580px; top: 408px; height: 52px; border: 3px solid var(--accent); border-radius: 6px; background: var(--accent-soft); pointer-events: none; }
+
+/* 17 Three tiers */
+.tier { position: absolute; top: 190px; width: 520px; height: 440px; box-sizing: border-box; padding: 44px 44px 0; border-radius: var(--radius); background: var(--surface); }
+.tier.t-keep { left: var(--gutter); border: 3px solid var(--accent); }
+.tier.t-mask { left: 700px; border: 3px dashed var(--accent-line); }
+.tier.t-drop { left: 1280px; border: 3px solid var(--ink); }
+.tier h3 { margin: 0 0 28px; font-size: var(--t-h3); font-weight: 700; letter-spacing: -0.03em; }
+.tier.t-keep h3, .tier.t-mask h3 { color: var(--accent); }
+.tier ul { margin: 0; padding: 0; list-style: none; }
+.tier li { padding: 18px 0; border-top: var(--hair) solid var(--rule); font-size: var(--t-body); line-height: 1.35; }
