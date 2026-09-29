@@ -14,7 +14,7 @@
   <div class="slides">
 
     <!-- Ⅰ title -->
-    <section class="opener" data-part="Ⅰ 원리" data-steps="1">
+    <section class="opener" data-part="Ⅰ. 원리" data-steps="1">
       <div class="title-num">PART 1</div>
       <div class="title-block">
         <h1 class="title-main">생성형 AI는<br>어떻게 작동할까<span class="cursor"></span></h1>
@@ -22,7 +22,7 @@
       </div>
       <div class="title-toc">
         <span>심심이<b>01</b></span>
-        <span>그래픽카드<b>02</b></span>
+        <span>GPU<b>02</b></span>
         <span>알파고<b>03</b></span>
         <span>다음 단어 예측<b>04</b></span>
         <span>LLM<b>05</b></span>
@@ -34,8 +34,14 @@
     </section>
 
     <!-- 01 SimSimi -->
-    <section data-scene="simsimi" data-kicker="01 · 심심이">
-      <div class="phone-wrap">
+    <section data-scene="simsimi" data-kicker="01 · 심심이" data-term="SimSimi, 2002">
+      <figure class="simsimi-shot" data-show="0">
+        <img src="assets/simsimi-profile.jpg" alt="심심이 앱 프로필 화면">
+        <span class="hl"></span>
+      </figure>
+      <p class="shot-note" data-show="0" data-delay="0.4"><b>자주 하는 말</b>“모르는 말이에요, 가르쳐 주세요.”</p>
+      <p class="note" data-show="0">이미지: Google Play 심심이 앱 소개 화면</p>
+      <div class="phone-wrap" data-show="1-">
         <div class="phone">
           <div class="phone-top">심심이</div>
           <div class="chat">
@@ -51,36 +57,35 @@
       <div class="qa empty" data-show="2" data-rise data-delay="2">?</div>
 
       <div class="captions">
-        <p data-show="0">심심이, 기억하시나요?</p>
+        <p data-show="0">심심이, 기억하시나요?<small>모르는 말은 사람에게 가르쳐 달라고 했다</small></p>
         <p data-show="1">질문에 맞는 서랍을 열어 답을 꺼낸다<small>답은 주로 사용자들이 직접 가르쳤다</small></p>
         <p data-show="2" class="strong">사람이 넣어 둔 답만 꺼낼 수 있었다</p>
       </div>
-      <aside class="notes">[화면] 실제 심심이 스크린샷으로 바꿔도 좋다. "질문과 답을 짝지어 저장해 두고 꺼내던 방식입니다."</aside>
+      <aside class="notes">"질문과 답을 짝지어 저장해 두고 꺼내던 방식입니다."</aside>
     </section>
 
     <!-- 02 GPU -->
-    <section data-scene="gpu" data-kicker="02 · 그래픽카드">
-      <div data-show="0-2">
+    <section data-scene="gpu" data-kicker="02 · GPU" data-term="Graphics Processing Unit">
+      <h2 class="bridge" data-show="0">사람이 답을 넣어 주지 않아도<br>기계가 <em>스스로</em> 배우려면?</h2>
+      <div data-show="1-">
         <div class="pixlabel cpu"><b>CPU</b><span>붓 한 자루 · 차례로</span></div>
         <div class="pixlabel gpu"><b>GPU</b><span>붓 수천 자루 · 한꺼번에</span></div>
         <div class="pixgrid cpu"></div>
         <div class="pixgrid gpu"></div>
       </div>
-      <div class="stock card" data-show="3" data-rise>
-        <h4>NVIDIA 주가 흐름<small>개념도 · 실제 수치는 강의 당일 확인</small></h4>
-        <svg viewBox="0 0 712 400"><line class="axis" x1="0" y1="390" x2="712" y2="390"/><path class="line" pathLength="1"/></svg>
-      </div>
+      <p class="aside" data-show="3" data-delay="0.8"><svg class="i"><use href="#i-arrow-right"/></svg>그래서 NVIDIA 주가가…</p>
 
       <div class="captions">
-        <p data-show="0">게임 화면은 수백만 개의 점(픽셀)</p>
-        <p data-show="1">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
-        <p data-show="2" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다</p>
-        <p data-show="3">그래서 벌어진 일<small>주식 이야기는 가볍게</small></p>
+        <p data-show="0">엄청난 양의 <em>계산</em>이 필요했다</p>
+        <p data-show="1">그 계산을 잘하는 부품이 게임용 그래픽카드<small>게임 화면은 수백만 개의 점(픽셀)</small></p>
+        <p data-show="2">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
+        <p data-show="3" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다</p>
       </div>
+      <aside class="notes">3단계: 오른쪽 위 문구에서 NVIDIA 주가 이야기를 말로 가볍게.</aside>
     </section>
 
     <!-- 03 AlphaGo -->
-    <section data-auto-animate data-scene="alphago" data-kicker="03 · 알파고">
+    <section data-auto-animate data-scene="alphago" data-kicker="03 · 알파고" data-term="AlphaGo">
       <svg class="stage" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
       <div class="tree-layer"><svg class="stage" viewBox="0 0 1920 1080" aria-hidden="true"></svg></div>
 
@@ -97,7 +102,7 @@
       <div class="chip-anchor"><div class="chip" data-id="cand-3">9%</div></div>
 
       <div class="captions">
-        <p data-show="0">바둑판 위의 돌 하나</p>
+        <p data-show="0">그 계산력으로 바둑에 도전했다<small>알파고(AlphaGo) · 2016 · 첫 수는 귀에서 시작한다</small></p>
         <p data-show="1">둘 수 있는 다음 수</p>
         <p data-show="2">그다음, 또 그다음…</p>
         <p data-show="3">전부 계산할 수는 없다</p>
@@ -111,7 +116,7 @@
     </section>
 
     <!-- 04 Next word -->
-    <section data-auto-animate data-scene="nextword" data-kicker="04 · 다음 단어 예측">
+    <section data-auto-animate data-scene="nextword" data-kicker="04 · 다음 단어 예측" data-term="Next-token prediction">
       <div class="sentence">
         <span>아버지가 방에</span><span class="slot"><span class="slot-word">들어가신다</span></span><span class="cursor"></span>
       </div>
@@ -119,7 +124,7 @@
       <div class="cands">
         <div class="cand" data-id="cand-1">
           <div class="fill" data-p="72" data-i="0"></div>
-          <span class="word-home">들어가신다</span><span class="word">들어가신다</span><span class="pct">72%</span>
+          <span class="word">들어가신다</span><span class="pct">72%</span>
         </div>
         <div class="cand" data-id="cand-2">
           <div class="fill" data-p="11" data-i="1"></div>
@@ -141,7 +146,7 @@
     </section>
 
     <!-- 04 Quiz -->
-    <section data-steps="4" data-kicker="04 · 다음 단어 예측">
+    <section data-steps="4" data-kicker="04 · 다음 단어 예측" data-term="Next-token prediction">
       <div class="quiz q1"><span>남산 위에 저 소나무</span><span class="blank"><span data-show="1-">철갑을 두른 듯</span></span></div>
       <div class="quiz q2" data-show="2-"><span>나랏말싸미 듕귁에 달아</span><span class="blank"><span data-show="3-">문자와로 서르 사맛디 아니할쎄</span></span></div>
 
@@ -155,33 +160,33 @@
     </section>
 
     <!-- 04 Model -->
-    <section data-auto-animate data-scene="model" data-kicker="04 · 모델이란?">
+    <section data-auto-animate data-scene="model" data-kicker="04 · 모델이란?" data-term="Model · Parameter">
       <svg class="funnel" viewBox="0 0 800 180" data-show="1-"><path d="M20 10 H780 L500 170 H300 Z"/></svg>
       <div class="panel-wrap" data-show="1-" data-delay="0.8"><div class="panel" data-id="panel"></div></div>
       <div class="knob-vals" data-show="2">0.137 · −0.882 · 0.451 · 0.029 · −0.316 · 0.774 · …</div>
 
       <div class="captions">
         <p data-show="0">세상의 수많은 글</p>
-        <p data-show="1">다음 단어 맞히기를 끝없이 반복하며 <em>손잡이</em>를 조정한다</p>
+        <p data-show="1">다음 단어 맞히기를 끝없이 반복하며 <em>손잡이</em>를 조정한다<small>손잡이 하나하나가 파라미터(parameter)</small></p>
         <p data-show="2" class="strong">모델 = 배운 패턴을 <em>숫자</em>로 압축한 것</p>
       </div>
       <aside class="notes">손잡이 하나하나가 파라미터. 예측 결과를 저장하는 게 아니라 패턴을 숫자로 저장한다.</aside>
     </section>
 
     <!-- 05 LLM -->
-    <section data-auto-animate data-scene="llm" data-kicker="05 · LLM">
+    <section data-auto-animate data-scene="llm" data-kicker="05 · LLM" data-term="Large Language Model">
       <h2 class="llm-title" data-show="0"><b>L</b><span>arge</span> <b>L</b><span>anguage</span> <b>M</b><span>odel</span></h2>
       <div class="panel-wrap" data-show="0"><div class="panel big" data-id="panel"></div></div>
 
       <div class="tok-head" data-show="1-">I went to school.<span>=</span>나는 학교에 갔다.</div>
       <div class="tok-legend" data-show="1-">
-        <span class="full"><i></i>온전한 조각(토큰)</span>
+        <span class="full"><i></i>토큰(token) · 온전한 조각</span>
         <span class="part"><i></i>글자의 일부만 담긴 조각</span>
       </div>
 
       <div class="captions">
-        <p data-show="0">커다란 언어 모델<small>손잡이(파라미터) 수 — GPT-3만 해도 1,750억 개</small></p>
-        <p data-show="1">옛 모델은 한국어를 <em>4배 넘게</em> 잘게 쪼갰다<small>조각이 많을수록 느리고 비싸다 · 학습한 한국어 자료도 적었다</small></p>
+        <p data-show="0">커다란 언어 모델<small>파라미터(parameter) 수 — GPT-3만 해도 1,750억 개</small></p>
+        <p data-show="1">옛 모델은 한국어를 <em>4배 넘게</em> 잘게 쪼갰다<small>토큰이 많을수록 느리고 비싸다 · 학습한 한국어 자료도 적었다</small></p>
         <p data-show="2">모델이 바뀔 때마다 조각이 커졌다</p>
         <p data-show="3" class="strong">최신 모델은 한국어도 <em>잘 읽는다</em></p>
       </div>
@@ -189,7 +194,7 @@
     </section>
 
     <!-- 06 Hallucination -->
-    <section data-scene="hallu" data-kicker="06 · 환각">
+    <section data-scene="hallu" data-kicker="06 · 환각" data-term="Hallucination">
       <div class="ask">세종대왕 맥북 던짐 사건 알려줘</div>
       <div class="answer-frame" data-show="2"></div>
       <div class="answer"></div>
@@ -198,13 +203,13 @@
       <div class="captions">
         <p data-show="0">이렇게 물으면?</p>
         <p data-show="1">단어 하나하나는 <em>확률이 높다</em></p>
-        <p data-show="2" class="strong">문장 전체는 지어낸 이야기</p>
+        <p data-show="2" class="strong">문장 전체는 지어낸 이야기<small>환각(hallucination) — 그럴듯하지만 사실이 아닌 답</small></p>
       </div>
       <p class="note">초기 ChatGPT 사례 재현 · 막대는 설명용 예시 · 최신 모델은 대부분 거절한다</p>
     </section>
 
     <!-- 06 Fake clause -->
-    <section data-scene="fakelaw" data-kicker="06 · 환각">
+    <section data-scene="fakelaw" data-kicker="06 · 환각" data-term="Hallucination">
       <div class="doc sheet">
         <span class="tag">가상 예시</span>
         <h3>AI 플랫폼 도입 계획(안)</h3>
@@ -231,9 +236,9 @@
     </section>
 
     <!-- 07 CoT -->
-    <section data-scene="cot" data-kicker="07 · 생각의 사슬">
+    <section data-scene="cot" data-kicker="07 · 생각의 사슬" data-term="Chain-of-Thought (CoT)">
       <div class="duel left">
-        <h3>바로 대답<small>생각 없이 말하기</small></h3>
+        <h3>바로 대답<small>Direct answer</small></h3>
         <svg viewBox="0 0 780 620">
           <circle class="ring" cx="640" cy="150" r="110"/><circle class="ring" cx="640" cy="150" r="75"/><circle class="bull" cx="640" cy="150" r="38"/>
           <path class="direct" pathLength="1"/>
@@ -243,7 +248,7 @@
         <div class="dart"></div>
       </div>
       <div class="duel right" data-show="2-">
-        <h3>생각하고 대답<small>Chain-of-Thought · 생각의 사슬</small></h3>
+        <h3>생각하고 대답<small>Chain-of-Thought (CoT)</small></h3>
         <svg viewBox="0 0 780 620">
           <circle class="ring" cx="640" cy="150" r="110"/><circle class="ring" cx="640" cy="150" r="75"/><circle class="bull" cx="640" cy="150" r="38"/>
           <path class="stairs" pathLength="1"/>
@@ -259,45 +264,70 @@
       <div class="captions">
         <p data-show="0">"생각 좀 하고 말해라"</p>
         <p data-show="1">바로 대답하면 빗나가기 쉽다</p>
-        <p data-show="2" class="strong">단계별로 생각시켰더니 <em>정확도가 올랐다</em></p>
+        <p data-show="2" class="strong">단계별로 생각시켰더니 <em>정확도가 올랐다</em><small>“Let’s think step by step” — 한 줄로 시작된 기법</small></p>
       </div>
     </section>
 
     <!-- 07 Effort -->
-    <section data-scene="effort" data-kicker="07 · 생각의 깊이">
+    <section data-scene="effort" data-kicker="07 · 생각의 깊이" data-term="Reasoning effort">
       <div class="dial-wrap">
-        <div class="dial-title">effort<small>추론 강도</small></div>
+        <div class="dial-title">Reasoning effort<small>생각의 깊이</small></div>
         <div class="dial-face"></div>
         <div class="dial-knob"></div>
         <div class="flame"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
       <div class="effort-area">
-        <div class="shot" data-show="0">[화면] wrks · ChatGPT의<br>추론 강도 설정 화면</div>
+        <figure class="ui-shot a" data-show="0"><img src="assets/wrks-thinking.png" alt="wrks 생각의 정도 선택 메뉴"><figcaption>wrks · 생각의 정도</figcaption></figure>
+        <figure class="ui-shot b" data-show="0" data-delay="0.15"><img src="assets/chatgpt-thinking.png" alt="ChatGPT 생각 시간 선택 메뉴" onerror="this.parentElement.classList.add('missing')"><figcaption>ChatGPT · Thinking</figcaption></figure>
 
         <div class="qcard" data-show="1">규정 A와 B가 충돌하는 조건을 모두 찾아줘</div>
         <svg viewBox="0 0 880 460"><path class="stairs" pathLength="1"/></svg>
         <div class="ok" data-show="1" data-delay="2"><svg class="i"><use href="#i-check"/></svg>정확</div>
-
-        <div class="qcard" data-show="2">1 + 1 은?</div>
-        <div class="bubble-wrap" data-show="2"><div class="bubble">음… 먼저 1이라는 수의 정의부터 살펴보면… 덧셈의 교환법칙을 고려하고… 혹시 이진법이라면… 다시 처음부터 검토하면…</div></div>
-        <div class="clock" data-show="2"><i></i></div>
-        <div class="coins" data-show="2">
-          <div class="coin" style="top: 220px"></div><div class="coin" style="top: 190px"></div><div class="coin" style="top: 160px"></div>
-          <div class="coin" style="top: 130px"></div><div class="coin" style="top: 100px"></div><div class="coin" style="top: 70px"></div>
-        </div>
-        <div class="answer2" data-show="2" data-delay="3.2">= 2<small>한참 뒤에, 비싸게</small></div>
       </div>
 
       <div class="captions">
-        <p data-show="0">생각의 깊이를 조절하는 손잡이</p>
-        <p data-show="1">어려운 문제엔 <em>강불</em> — 계단이 길어지고 정확해진다</p>
-        <p data-show="2" class="strong">쉬운 문제에 강불은 시간·비용만 든다<small>장고 끝에 악수 둔다 · 문제에 맞게 조절</small></p>
+        <p data-show="0">생각의 깊이를 조절하는 손잡이<small>wrks · ChatGPT 모두 직접 고를 수 있다</small></p>
+        <p data-show="1" class="strong">어려운 문제엔 <em>강불</em> — 계단이 길어지고 정확해진다</p>
       </div>
+      <p class="note" data-show="0">이미지: wrks 릴리스 노트(docs.wrks.ai)</p>
+    </section>
+
+    <!-- 07 Effort example -->
+    <section data-steps="3" data-kicker="07 · 생각의 깊이" data-term="Reasoning effort">
+      <div class="bubble-me greet">안녕하세요</div>
+      <div class="effort-col low" data-show="1-" data-rise>
+        <div class="lvl"><b>Low</b>즉시 답변</div>
+        <ol class="trace"><li>인사다. 인사로 답하자.</li></ol>
+        <p class="reply">안녕하세요! 무엇을 도와드릴까요?</p>
+        <p class="cost"><b>1초</b>생각 약 10토큰</p>
+      </div>
+      <div class="effort-col max" data-show="2-">
+        <div class="lvl"><b>Max</b>매우 꼼꼼하게</div>
+        <ol class="trace">
+          <li data-show="2-" data-delay="0.1">사용자가 “안녕하세요”라고 인사했다.</li>
+          <li data-show="2-" data-delay="0.35">존댓말이다. 격식 있는 말투로 답해야 할까?</li>
+          <li data-show="2-" data-delay="0.6">이전 대화에서 이어지는 말일까? 맥락을 다시 확인한다.</li>
+          <li data-show="2-" data-delay="0.85">인사 뒤에 업무 요청이 숨어 있을 수도 있다.</li>
+          <li data-show="2-" data-delay="1.1">시간을 알면 “좋은 아침입니다”가 나을 텐데, 시간 정보가 없다.</li>
+          <li data-show="2-" data-delay="1.35">너무 길면 부담스럽고, 너무 짧으면 무성의해 보인다.</li>
+          <li data-show="2-" data-delay="1.6">한국어 인사 관례를 다시 떠올려 본다…</li>
+          <li data-show="2-" data-delay="1.85">결론: 인사로 답하고, 도울 일을 묻자.</li>
+        </ol>
+        <p class="reply" data-show="2-" data-delay="2.2">안녕하세요! 무엇을 도와드릴까요?</p>
+        <p class="cost" data-show="2-" data-delay="2.4"><b>40초</b>생각 약 2,000토큰</p>
+      </div>
+
+      <div class="captions">
+        <p data-show="0">간단한 인사에 생각의 깊이만 바꾸면?</p>
+        <p data-show="1">Low — 거의 바로 답한다</p>
+        <p data-show="2" class="strong">답은 같다. <em>시간과 비용</em>만 늘었다<small>장고 끝에 악수 둔다 · 문제에 맞게 조절</small></p>
+      </div>
+      <p class="note">생각 과정·시간·토큰 수는 설명용 예시</p>
     </section>
 
     <!-- 07 Glass -->
-    <section data-steps="2" data-kicker="07 · 생각의 사슬">
-      <div class="think"><small>AI가 보여 주는 생각 과정</small>먼저 날짜 조건을 확인하고 → 예외 조항과 대조하면 → <b>답은 B</b></div>
+    <section data-steps="2" data-kicker="07 · 생각의 사슬" data-term="Reasoning">
+      <div class="think"><small>AI가 보여 주는 생각 과정 · Reasoning</small>먼저 날짜 조건을 확인하고 → 예외 조항과 대조하면 → <b>답은 B</b></div>
       <div class="glass" data-show="1" data-rise>
         <div class="matrix" aria-hidden="true">0.137  -0.882   0.451   0.029  -0.316   0.774  -0.051   0.608  -0.247   0.913  -0.402   0.186
 -0.564  0.211  -0.093   0.847   0.362  -0.715   0.428  -0.186   0.059   0.331  -0.978   0.644
@@ -316,7 +346,7 @@
     </section>
 
     <!-- 08 Context -->
-    <section data-scene="context" data-kicker="08 · 맥락">
+    <section data-scene="context" data-kicker="08 · 맥락" data-term="Context window">
       <div class="scroll-wrap">
         <div class="rod"></div>
         <div class="paper"><div class="scan"></div></div>
@@ -341,14 +371,21 @@
       <div class="memo-wrap" data-show="3" data-rise data-delay="0.4"><div class="memo"><b>요약 한 장</b>· 목표: …<br>· 결정한 것: …<br>· 남은 일: …</div></div>
       <div class="arrow-big" data-show="3" data-delay="0.9"><svg class="i"><use href="#i-arrow-right"/></svg></div>
       <div class="newchat card" data-show="3" data-rise data-delay="1.2">
-        <div class="dots"><i></i><i></i><i></i></div>
-        <h4>새 채팅</h4>
-        <div class="pinned">지금까지 요약: 목표는 …, 결정한 것은 …, 남은 일은 …</div>
-        <p class="msg me" style="margin-left: auto">이어서 진행해 줘</p>
+        <div class="nc-side">
+          <div class="nc-new"><svg class="i"><use href="#i-square-pen"/></svg>새 채팅</div>
+          <span class="nc-old">출장비 규정 검토</span>
+          <span>회의록 요약</span>
+          <span>공문 초안</span>
+        </div>
+        <div class="nc-main">
+          <div class="pinned"><b>요약 한 장</b>목표는 …, 결정한 것은 …, 남은 일은 …</div>
+          <p class="msg me">이어서 진행해 줘</p>
+          <div class="nc-input">메시지를 입력하세요</div>
+        </div>
       </div>
 
       <div class="captions">
-        <p data-show="0">대화는 두루마리처럼 길어진다</p>
+        <p data-show="0">대화는 두루마리처럼 길어진다<small>한 번에 읽을 수 있는 분량 = 컨텍스트 창(context window)</small></p>
         <p data-show="1">AI는 답할 때마다 <em>처음부터</em> 다시 읽는다</p>
         <p data-show="2">긴 대화에서는 <em>가운데</em>를 특히 잘 놓친다</p>
         <p data-show="3" class="strong">길어지면 새 채팅 · <em>요약 한 장</em> 들고 이사</p>
@@ -382,7 +419,7 @@
     </section>
 
     <!-- Ⅱ title -->
-    <section class="opener" data-part="Ⅱ 잘 쓰는 법" data-steps="1">
+    <section class="opener" data-part="Ⅱ. 잘 쓰는 법" data-steps="1">
       <div class="title-num">PART 2</div>
       <div class="title-block">
         <h1 class="title-main">어떻게 하면<br>잘 쓸까<span class="cursor"></span></h1>
@@ -392,13 +429,13 @@
         <span>프롬프트<b>10</b></span>
         <span>자료를 줘라<b>11</b></span>
         <span>마음가짐<b>12</b></span>
-        <span>사례: 번역투<b>13</b></span>
+        <span>사례: 번역투 교정<b>13</b></span>
         <span>그래서 어떻게?<b>14</b></span>
       </div>
     </section>
 
     <!-- 10 Prompt -->
-    <section data-scene="prompt" data-kicker="10 · 프롬프트">
+    <section data-scene="prompt" data-kicker="10 · 프롬프트" data-term="Prompt">
       <div class="bubble-me" style="left: 160px; top: 190px; width: 620px" data-show="0">이 메일 어때? 검토해 줘</div>
       <div class="bubble-me" style="left: 160px; top: 190px; width: 620px" data-show="1-">원장님께 보낼 메일이야. 교정·교열해 주고, 두괄식인지도 확인해 줘</div>
 
@@ -428,7 +465,7 @@
     </section>
 
     <!-- 10 Boss -->
-    <section data-steps="2" data-kicker="10 · 프롬프트">
+    <section data-steps="2" data-kicker="10 · 프롬프트" data-term="Prompt">
       <div class="bubble-them" style="left: 180px; top: 230px; width: 820px" data-show="0"><span class="speaker">상사</span>보고서 별로야, 다시 써 와</div>
       <div class="bubble-them" style="left: 180px; top: 230px; width: 820px" data-show="1-"><span class="speaker">상사</span>'현황 및 문제점'에 데이터가 부족해. 보충해 와</div>
 
@@ -448,7 +485,7 @@
     </section>
 
     <!-- 11 Map -->
-    <section data-scene="map" data-kicker="11 · 자료를 줘라">
+    <section data-scene="map" data-kicker="11 · 자료를 줘라" data-term="Context engineering">
       <div class="map card">
         <div class="city" style="left: 250px; top: 170px"><span>서울</span></div>
         <div class="city uni" style="left: 390px; top: 130px"><span>강원대학교 · 춘천</span></div>
@@ -478,7 +515,7 @@
     </section>
 
     <!-- 11 Desk -->
-    <section data-scene="desk" data-kicker="11 · 자료를 줘라">
+    <section data-scene="desk" data-kicker="11 · 자료를 줘라" data-term="Context engineering">
       <div class="bubble-me" style="left: 180px; top: 170px">우리 대학 출장비 기준 알려 줘</div>
       <svg class="avatar" style="left: 390px; top: 370px" viewBox="0 0 200 220"><use href="#ai"/></svg>
       <div class="desk"></div>
@@ -505,7 +542,7 @@
     </section>
 
     <!-- 11 Post-it vs drawers -->
-    <section data-steps="3" data-kicker="11 · 자료를 줘라">
+    <section data-steps="3" data-kicker="11 · 자료를 줘라" data-term="Context engineering">
       <div class="duo l card" data-show="0-" data-rise>
         <h3><svg class="i"><use href="#i-paperclip"/></svg>첨부파일<small>이번 한 번</small></h3>
         <div class="mini-chat">
@@ -539,13 +576,16 @@
         <div style="top: 60px; left: 10px">정리</div><div style="top: 30px; left: -6px">검토</div><div style="top: 0; left: 4px">초안</div>
       </div>
       <div class="idle" data-show="0">· · ·</div>
-      <div class="bubble-them" style="left: 700px; top: 200px; width: 600px" data-show="1-" data-rise>어떤 결과가 필요하세요?<br>누가 읽나요?</div>
+      <div class="bubble-me" style="left: 480px; top: 200px" data-show="1" data-rise>보고서 초안 써 줘. 모호한 부분은 나에게 질문해</div>
+      <div class="bubble-them" style="left: 720px; top: 330px; width: 500px" data-show="1" data-rise data-delay="0.8">좋아요. 먼저 두 가지만요 — 어떤 결과가 필요하세요? 누가 읽나요?</div>
+      <div class="bubble-me" style="left: 480px; top: 200px" data-show="2" data-rise>비슷한 사례를 찾아서 프롬프트를 만들어 줘</div>
+      <div class="bubble-them" style="left: 720px; top: 330px; width: 500px" data-show="2" data-rise data-delay="0.8">사례 3건을 찾았어요. 이걸 바탕으로 프롬프트를 써 볼게요</div>
       <div class="pen-wrap"><svg class="pen i"><use href="#i-pen-line"/></svg></div>
 
       <div class="captions">
         <p data-show="0">똑똑한 비서 — 단, <em>시키지 않은 일</em>은 하지 않는다</p>
-        <p data-show="1">AI가 <em>나에게</em> 묻게 하자<small>"모호한 부분은 하나씩 물어봐 줘"</small></p>
-        <p data-show="2" class="strong">프롬프트도 <em>AI에게</em> 쓰게 하자<small>"비슷한 사례를 찾아서 프롬프트를 만들어 줘"</small></p>
+        <p data-show="1">AI가 <em>나에게</em> 묻게 하자</p>
+        <p data-show="2" class="strong">프롬프트도 <em>AI에게</em> 쓰게 하자</p>
       </div>
     </section>
 
@@ -554,8 +594,8 @@
       <div class="tips">
         <div class="card" data-show="1-" data-rise><b>01</b><h3>좋은 프롬프트는 참고만</h3><p>틀에 얽매이지 말자</p></div>
         <div class="card" data-show="2-" data-rise><b>02</b><h3>한 번에 완성하려 하지 않기</h3><p>여러 번 대화하며 다가간다</p></div>
-        <div class="card" data-show="3-" data-rise><b>03</b><h3>잘 나오면 되묻기</h3><p>"다음에도 이렇게 받으려면 어떻게 요청해?"</p></div>
-        <div class="card" data-show="4-" data-rise><b>04</b><h3>AI가 되묻게 하기</h3><p>"관련해서 내가 뭘 찾아봐야 할지 알려 줘"</p></div>
+        <div class="card" data-show="3-" data-rise><b>03</b><h3>잘 나오면 되묻기</h3><p class="say">다음에도 이렇게 처리하려면 어떻게 요청해?</p></div>
+        <div class="card" data-show="4-" data-rise><b>04</b><h3>AI가 되묻게 하기</h3><p class="say">관련해서 내가 뭘 찾아봐야 할지 알려 줘</p></div>
       </div>
 
       <div class="captions">
@@ -565,7 +605,7 @@
     </section>
 
     <!-- 13 Translationese -->
-    <section data-scene="mold" data-kicker="13 · 사례: 번역투">
+    <section data-scene="mold" data-kicker="13 · 사례: 번역투 교정">
       <div class="mold">
         <div class="mold-grid" data-show="0-1"></div>
         <span class="mold-tag" data-show="0-1">영어 문장 틀</span>
@@ -576,6 +616,7 @@
         <div class="sent b" data-show="1">회의<mark class="tr">를 통해</mark> 의견을 수렴했다.</div>
         <div class="sent b" data-show="2-" data-delay="0.8"><span class="fixed">회의에서 의견을 모았다.</span></div>
       </div>
+      <div class="bubble-me" style="left: 120px; top: 725px" data-show="2" data-rise>AI가 자주 틀리는 한국어 자료를 찾아 교정 프롬프트를 만들어 줘</div>
       <div class="agent-drawer" data-show="3" data-delay="0.2"><span>한국어 교정 에이전트</span></div>
       <div class="guide-wrap" data-show="2">
         <div class="guide sheet">
@@ -591,7 +632,7 @@
       <div class="captions">
         <p data-show="0">AI가 가장 잘하는 언어는 영어<small>그래서 한국어에 번역투가 남는다</small></p>
         <p data-show="1">"번역투 고쳐 줘" → <em>겉만</em> 다듬어진다</p>
-        <p data-show="2" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 틀이 녹는다<small>"AI가 자주 틀리는 한국어 자료를 찾아 교정 프롬프트를 만들어 줘"</small></p>
+        <p data-show="2" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 틀이 녹는다</p>
         <p data-show="3">지침은 <em>저장</em>해 두고 계속 쓴다</p>
       </div>
       <aside class="notes">
@@ -602,7 +643,7 @@
     </section>
 
     <!-- 13 Real guideline -->
-    <section data-steps="1" data-kicker="13 · 사례: 번역투">
+    <section data-steps="1" data-kicker="13 · 사례: 번역투 교정">
       <div class="rules sheet">
         <h3>한국어 문법<small>AI가 자료를 찾아 만든 지침 — 실제 사용 중</small></h3>
         <ul>
@@ -614,7 +655,7 @@
         </ul>
       </div>
       <div class="captions">
-        <p>이렇게 만든 지침을 <em>모든 한국어 작업</em>에 붙여 쓴다</p>
+        <p>이렇게 만든 지침을 <em>필요할 때</em> 가져다 쓴다</p>
       </div>
     </section>
 
@@ -634,6 +675,7 @@
         <div class="bubble-me no">그냥 고쳐 줘</div>
         <div class="bubble-me">내가 원한 건 근거 자료로 수치를 증명하는 거야</div>
       </div>
+      <div class="bubble-me" style="left: 1140px; top: 140px" data-show="3" data-rise>지금까지 한 걸 프롬프트로 정리해 줘</div>
       <div class="recipe">
         <div class="pg" style="top: 36px; left: 36px" data-show="4"></div>
         <div class="pg" style="top: 18px; left: 18px" data-show="4"></div>
@@ -644,13 +686,13 @@
         <p data-show="0">① 일단 <em>편하게</em> 요청한다</p>
         <p data-show="1">② 안 맞으면 <em>분명하게</em> 고쳐 달라고 한다</p>
         <p data-show="2">③ 여러 번 대화하며 완성본으로 다가간다</p>
-        <p data-show="3">④ 다음에도 쓸 것 같으면 <em>지침</em>으로 정리해 달라고 한다<small>"지금까지 한 걸 프롬프트로 정리해 줘"</small></p>
+        <p data-show="3">④ 다음에도 쓸 것 같으면 <em>지침</em>으로 정리해 달라고 한다</p>
         <p data-show="4" class="strong">한 번에 완성하지 않는다. <em>쌓는다</em></p>
       </div>
     </section>
 
     <!-- Ⅲ title -->
-    <section class="opener" data-part="Ⅲ 실무 사례" data-steps="1">
+    <section class="opener" data-part="Ⅲ. 실무 사례" data-steps="1">
       <div class="title-num">PART 3</div>
       <div class="title-block">
         <h1 class="title-main">실무에서는<br>이렇게<span class="cursor"></span></h1>
@@ -688,23 +730,38 @@
         <div class="paper-doc">
           <div class="t"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 85%"></div><div class="h"></div><div class="l" style="width: 95%"></div><div class="l"></div><div class="l" style="width: 70%"></div><div class="h"></div><div class="l"></div><div class="l" style="width: 80%"></div>
           <div class="bones" data-show="1-" data-delay="2">
-            <span class="title">제목</span><span>1. 추진 배경</span><span>2. 현황 및 문제점</span><span>3. 개선 방안</span><span>4. 행정 사항</span>
+            <span class="title">제목</span><span>1. 추진 배경</span><span>2. 현황 및 문제점</span><span>3. 개선 방안</span><span>4. 추진 계획</span>
           </div>
         </div>
         <div class="xscan"></div>
       </div>
       <div class="bubble-me req-bubble" data-show="1">"우리 대학 공문 양식이야. 구조, 내용 흐름, 문체를 분석해서 이런 공문서를 써 달라고 할 때 쓸 프롬프트를 만들어 줘. 모호한 부분은 임의로 정하지 말고 나에게 물어봐."</div>
-      <div class="agent-drawer doc-agent" data-show="2"><span>공문서 작성 에이전트</span></div>
+      <div class="bubble-them" style="left: 880px; top: 170px; width: 900px" data-show="2">프롬프트 초안을 만들었어요. 하나만 확인할게요 — 결재 라인은 어떻게 쓸까요?</div>
+      <div class="bubble-me" style="left: 1350px; top: 320px" data-show="2" data-delay="0.7">담당–팀장–처장으로 고정해 줘</div>
+      <div class="gen-prompt sheet" data-show="2" data-delay="1.2">
+        <h4>공문서 작성 프롬프트</h4>
+        <dl>
+          <dt>역할</dt><dd>우리 대학 행정 공문 작성자</dd>
+          <dt>구조</dt><dd>제목 · 1. 추진 배경 · 2. 현황 및 문제점 · 3. 개선 방안 · 4. 추진 계획</dd>
+          <dt>문체</dt><dd>개조식 · ‘~함’ 종결 · 두괄식</dd>
+          <dt>결재</dt><dd>담당–팀장–처장</dd>
+          <dt>규칙</dt><dd>모호한 부분은 임의로 정하지 말고 묻기</dd>
+        </dl>
+      </div>
+      <div class="agent-drawer doc-agent" data-show="3"><span>공문서 작성 에이전트</span></div>
 
       <div class="captions">
-        <p data-show="0">가진 공문 몇 개를 보여 주고</p>
+        <p data-show="0">가진 공문서 몇 개를 보여주고</p>
         <p data-show="1">구조·흐름·문체를 <em>분석</em>하게 한다</p>
-        <p data-show="2" class="strong">그 분석으로 <em>나만의 공문서 에이전트</em><small>쓰다가 불편한 점은 조금씩 고쳐 간다</small></p>
+        <p data-show="2">분석으로 AI가 <em>프롬프트</em>를 쓰고, 모호한 건 나에게 묻는다</p>
+        <p data-show="3" class="strong">그 프롬프트로 <em>나만의 공문서 에이전트</em><small>쓰다가 불편한 점은 조금씩 고쳐 간다</small></p>
       </div>
     </section>
 
     <!-- 15 Research first -->
     <section data-scene="research" data-kicker="15 · 공문서 작성">
+      <div class="bubble-me" style="left: 800px; top: 130px" data-show="0" data-rise>국가·교육부 차원의 당위성, 목표, 공개 자료를 찾아 줘</div>
+      <div class="bubble-me" style="left: 800px; top: 130px" data-show="1" data-rise>현황과 문제점 4가지를 정량적으로 뽑아 줘. 그중에서 내가 고를게</div>
       <div class="rings" data-show="0-2">
         <div class="ring-c r1"><span>국가 정책</span></div>
         <div class="ring-c r2" data-show="0-2" data-delay="0.4"><span>교육부</span></div>
@@ -723,8 +780,8 @@
       <div class="pcard card"><h4>역량 편차 확대</h4><p>부서 간 활용도 <b>○배</b> 차이</p></div>
 
       <div class="captions">
-        <p data-show="0">① 자료 조사부터 — <em>거시 → 미시</em><small>"국가·교육부 차원의 당위성, 목표, 공개 자료를 찾아 줘"</small></p>
-        <p data-show="1">② 문제점 후보 4가지를 <em>정량적으로</em><small>"그중에서 내가 고를게"</small></p>
+        <p data-show="0">① 자료 조사부터 — <em>거시 → 미시</em></p>
+        <p data-show="1">② 문제점 후보 4가지를 <em>정량적으로</em></p>
         <p data-show="2" class="strong">고르는 건 <em>사람</em></p>
         <p data-show="3">③ 고른 것으로 보고서를 쓰게 한다<small>빈손으로 시키면 아무 말 대잔치 · 모호한 것은 나에게 묻게</small></p>
       </div>
@@ -777,7 +834,7 @@
     </section>
 
     <!-- Ⅳ title -->
-    <section class="opener" data-part="Ⅳ 주의" data-steps="1">
+    <section class="opener" data-part="Ⅳ. 주의" data-steps="1">
       <div class="title-num">PART 4</div>
       <div class="title-block">
         <h1 class="title-main">주의할 점<span class="cursor"></span></h1>
@@ -857,13 +914,13 @@
       <span class="who-tag" style="left: 580px; top: 620px">GPT</span>
       <svg class="avatar" style="left: 1240px; top: 380px" viewBox="0 0 200 220"><use href="#ai"/></svg>
       <span class="who-tag" style="left: 1340px; top: 620px">Gemini</span>
-      <div class="textbook">같은 교과서</div>
+      <div class="textbook">겹치는<br>학습 자료</div>
       <div class="bubble-them" style="left: 380px; top: 270px" data-show="1-">정답은 A입니다</div>
       <div class="bubble-them" style="left: 1180px; top: 270px" data-show="1-" data-delay="0.4">정답은 A입니다</div>
       <div class="verdict-big" data-show="2" data-rise>합의 ≠ 정답</div>
 
       <div class="captions">
-        <p data-show="0">둘 다 비슷한 자료로 배웠다</p>
+        <p data-show="0">둘 다 비슷한 자료로 배웠다<small>인터넷 공개 글·위키백과·책 — 학습 자료가 크게 겹친다</small></p>
         <p data-show="1">그래서 <em>같은 방향</em>으로 틀릴 수 있다</p>
         <p data-show="2" class="strong">두 AI가 같다고 <em>맞는 건 아니다</em></p>
       </div>
@@ -915,13 +972,30 @@
     <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
     <symbol id="i-pen-line" viewBox="0 0 24 24"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></symbol>
     <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></symbol>
+    <symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></symbol>
     <symbol id="i-archive" viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></symbol>
   </defs>
   <defs>
-    <!-- The model is a text field with a caret (the deck's through-line), never a robot. -->
-    <symbol id="ai" viewBox="0 0 200 220"><rect x="28" y="52" width="144" height="120" rx="8" fill="var(--surface)" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke"/><rect x="92" y="82" width="8" height="60" fill="var(--accent)"/></symbol>
-    <!-- The person: Lucide user-round, scaled. -->
-    <symbol id="human" viewBox="0 0 200 220"><g fill="var(--surface)" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round"><circle cx="100" cy="84" r="42" vector-effect="non-scaling-stroke"/><path d="M34 196a66 66 0 0 1 132 0" vector-effect="non-scaling-stroke"/></g></symbol>
+    <!-- The model is a speech bubble with a caret (the deck's through-line), never a robot. -->
+    <symbol id="ai" viewBox="0 0 200 220">
+    <path d="M56 30H144C160 30 172 42 172 58V145C172 163 159 176 141 176H113L88 207V176H56C38 176 28 163 28 145V58C28 42 40 30 56 30Z" fill="var(--surface)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <circle cx="76" cy="101" r="4" fill="currentColor"/>
+    <circle cx="124" cy="101" r="4" fill="currentColor"/>
+    <path d="M86 128Q100 140 114 128" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M149 111V136" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  </symbol>
+    <!-- The person: editorial line bust drawn to match. -->
+    <symbol id="human" viewBox="0 0 200 220">
+    <path d="M20 209V193C20 172 41 159 76 154H124C159 159 180 172 180 193V209Z" fill="var(--surface)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M79 154L100 178L121 154V209H79Z" fill="var(--paper-2)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M83 132V156C87 164 93 169 100 169S113 164 117 156V132Z" fill="var(--surface)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M62 84C62 52 77 37 101 37C127 37 141 53 139 84L135 109C131 130 116 143 100 143C84 143 69 130 65 109Z" fill="var(--surface)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M61 88C56 57 73 29 102 29C131 29 147 51 141 86C134 81 130 72 129 64C116 75 95 77 80 68C77 79 70 85 61 88Z" fill="var(--paper-2)" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M73 155L65 170L80 186L88 209" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M127 155L135 170L120 186L112 209" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M83 101H87" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M113 101H117" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  </symbol>
   </defs>
 </svg>
 

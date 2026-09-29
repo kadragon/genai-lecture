@@ -7,7 +7,8 @@
 // Declarative shortcuts handled here for every stepped section:
 //   <section data-steps="4">          stepped slide with no scene code
 //   <section data-part="Ⅰ 원리">      part label, carried forward to later sections
-//   <section data-kicker="03 · 알파고"> header label
+//   <section data-kicker="03 · 알파고"> header label; also marks the chapter
+//   <section data-term="AlphaGo">      English term shown after the header label
 //   <el data-show="2">  / "2-" / "1-3"  visible only in that step range (opacity)
 //   <el data-show="2-" data-rise>       also slides up 12px on entry
 //   <el data-show="2-" data-delay="0.4">
@@ -79,8 +80,10 @@ window.Stepper = (() => {
         const [num, ...title] = section.dataset.kicker.split(' · ');
         const h = document.createElement('header');
         h.className = 'kicker';
-        h.append(span('part', part), span('', num, 'b'), span('', title.join(' · ')));
+        h.append(span('part', part), span('', `${num}.`, 'b'), span('', title.join(' · ')));
+        if (section.dataset.term) h.append(span('term', section.dataset.term));
         section.prepend(h);
+        Object.assign(section.dataset, { chapter: num, chapterTitle: title.join(' · '), chapterPart: part });
       }
       scene.setup && scene.setup(section);
     });
@@ -104,9 +107,39 @@ window.Stepper = (() => {
     render(section, f === undefined || f < 0 ? 0 : f + 1, instant);
   };
 
+  // Chapter card: stepping forward into a new chapter covers the slide with its
+  // number and title for a beat, then wipes upward to reveal it. Skipped between
+  // auto-animate slides, whose morph is the transition.
+  let card, cardAnims = [];
+  const chapterCard = (to, from) => {
+    cardAnims.forEach((a) => a.stop());
+    cardAnims = [];
+    if (!card) {
+      card = document.createElement('div');
+      card.className = 'chapter-card';
+      card.append(span('cc-part', ''), span('cc-num', '', 'b'), span('cc-title', '', 'h2'), span('cc-term', '', 'p'));
+      document.querySelector('.reveal .slides').append(card);
+    }
+    card.style.visibility = 'hidden';
+    const forward = from && Reveal.getIndices(to).h === Reveal.getIndices(from).h + 1;
+    const morph = from && 'autoAnimate' in to.dataset && 'autoAnimate' in from.dataset;
+    if (REDUCED || !forward || morph || !to.dataset.chapter || to.dataset.chapter === from.dataset.chapter) return;
+    card.children[0].textContent = to.dataset.chapterPart;
+    card.children[1].textContent = to.dataset.chapter;
+    card.children[2].textContent = to.dataset.chapterTitle;
+    card.children[3].textContent = to.dataset.term || '';
+    card.style.visibility = 'visible';
+    const text = [...card.children];
+    cardAnims = [
+      Motion.animate(card, { clipPath: ['inset(0% 0% 0% 0%)', 'inset(0% 0% 100% 0%)'] }, { duration: 0.45, delay: 0.95, ease: EASE }),
+      Motion.animate(text, { opacity: [0, 1], y: [16, 0] }, { duration: DUR, ease: EASE, delay: Motion.stagger(0.06) }),
+    ];
+    cardAnims[0].then(() => { card.style.visibility = 'hidden'; });
+  };
+
   const attach = () => {
     Reveal.on('ready', () => renderCurrent(true));
-    Reveal.on('slidechanged', () => renderCurrent(true));
+    Reveal.on('slidechanged', (e) => { chapterCard(e.currentSlide, e.previousSlide); renderCurrent(true); });
     Reveal.on('fragmentshown', () => renderCurrent(false));
     Reveal.on('fragmenthidden', () => renderCurrent(false));
   };

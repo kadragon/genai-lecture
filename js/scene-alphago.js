@@ -1,8 +1,11 @@
 // Ch.3 AlphaGo: a stone, branches exploding past the universe, then pruned to three.
 (() => {
   const NS = 'http://www.w3.org/2000/svg';
-  const CX = 960, CY = 540;
-  const CHOSEN = [0, 3, 5];            // level-1 branches that survive pruning
+  const BX = 960, BY = 500;            // board centre
+  const CELL = 30, LINES = 19, HALF = CELL * (LINES - 1) / 2;
+  // First move on the lower-left star point (4-4), where real games open.
+  const CX = BX - HALF + 3 * CELL, CY = BY + HALF - 3 * CELL;
+  const CHOSEN = [0, 7, 6];            // level-1 branches that survive pruning: right, up-right, up
   const CHOSEN_CHILD = 1;              // which level-2 child continues each chain
   const CHIP_W = 124, CHIP_H = 56;     // keep in sync with .chip in deck.css
 
@@ -28,16 +31,20 @@
     }
 
     const board = el('g', { class: 'board' }, svg);
-    const cell = 60, half = cell * 4;
-    el('rect', { x: CX - half - 30, y: CY - half - 30, width: half * 2 + 60, height: half * 2 + 60, rx: 8, class: 'board-bg' }, board);
-    for (let i = 0; i < 9; i++) {
-      const o = -half + i * cell;
-      el('line', { x1: CX - half, y1: CY + o, x2: CX + half, y2: CY + o }, board);
-      el('line', { x1: CX + o, y1: CY - half, x2: CX + o, y2: CY + half }, board);
+    el('rect', { x: BX - HALF - 24, y: BY - HALF - 24, width: HALF * 2 + 48, height: HALF * 2 + 48, rx: 2, class: 'board-bg' }, board);
+    for (let i = 0; i < LINES; i++) {
+      const o = -HALF + i * CELL;
+      el('line', { x1: BX - HALF, y1: BY + o, x2: BX + HALF, y2: BY + o }, board);
+      el('line', { x1: BX + o, y1: BY - HALF, x2: BX + o, y2: BY + HALF }, board);
     }
+    [3, 9, 15].forEach((i) => [3, 9, 15].forEach((j) => {
+      el('circle', { cx: BX - HALF + i * CELL, cy: BY - HALF + j * CELL, r: 4, class: 'hoshi' }, board);
+    }));
 
     // Scaled as an HTML layer: Motion overrides transform-origin on SVG elements.
     const treeLayer = section.querySelector('.tree-layer');
+    treeLayer.style.transformOrigin = `${CX}px ${CY}px`;
+    Object.assign(section.querySelector('.go-circle').style, { left: `${CX}px`, top: `${CY}px` });
     const tree = el('g', {}, treeLayer.querySelector('svg'));
     const levels = [[], [], []];
     const branch = (x0, y0, angleDeg, len, level) => {
@@ -58,7 +65,7 @@
         for (let k = 0; k < 3; k++) branch(b2.x1, b2.y1, b2.angleDeg - 30 + k * 30 + jitter(6), 125, 2);
       }
     }
-    el('circle', { cx: CX, cy: CY, r: 24, class: 'stone' }, tree);
+    el('circle', { cx: CX, cy: CY, r: 13, class: 'stone' }, tree);
 
     const chains = CHOSEN.map((i) => [levels[0][i], levels[0][i].children[CHOSEN_CHILD]]);
     // Auto-animate diffs offsetLeft/Top, so the chip itself sits in slide coordinates.

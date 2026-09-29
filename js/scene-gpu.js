@@ -1,4 +1,4 @@
-// Ch.2 GPU: one brush paints pixel by pixel, thousands paint at once; pixels are numbers.
+// Ch.2 GPU: why learning needs compute, then one brush vs thousands; pixels are numbers.
 (() => {
   const INVADER = [
     '..a.....a..',
@@ -40,30 +40,20 @@
     const cpu = build(section.querySelector('.pixgrid.cpu'));
     const gpu = build(section.querySelector('.pixgrid.gpu'));
 
-    // Concept curve for the stock aside: flat for years, then steep.
-    const pts = Array.from({ length: 40 }, (_, i) => {
-      const t = i / 39;
-      const y = (Math.exp(4.2 * t) - 1) / (Math.exp(4.2) - 1);
-      return [t * 700, 380 - (y * 340 + (rng() - 0.5) * 18 * (0.3 + t))];
-    });
-    const line = section.querySelector('.stock .line');
-    line.setAttribute('d', 'M' + pts.map(([x, y]) => `${x.toFixed(1)} ${Math.min(380, y).toFixed(1)}`).join(' L'));
-
-    r = { cells, cpu, gpu, gpuDelay: gpu.map(() => rng() * 0.35), line, digits: [...section.querySelectorAll('.pix i')] };
+    r = { cells, cpu, gpu, gpuDelay: gpu.map(() => rng() * 0.35), digits: [...section.querySelectorAll('.pix i')] };
   };
 
   const render = (step, instant) => {
     const { go } = Stepper;
     const paint = (pixes, delayOf) => pixes.forEach((p, i) => {
       const c = r.cells[i];
-      const bg = step === 0 ? BLANK : step === 1 ? COLORS[c] : DIM[c];
-      go(p, { backgroundColor: bg }, instant, { duration: 0.2, delay: instant || step !== 1 ? 0 : delayOf(i) });
+      const bg = step <= 1 ? BLANK : step === 2 ? COLORS[c] : DIM[c];
+      go(p, { backgroundColor: bg }, instant, { duration: 0.2, delay: instant || step !== 2 ? 0 : delayOf(i) });
     });
     paint(r.cpu, (i) => i * 0.028);   // one brush: ~7s for the whole picture
     paint(r.gpu, (i) => r.gpuDelay[i]); // thousands of brushes: under half a second
 
-    go(r.digits, { opacity: step >= 2 ? 1 : 0 }, instant, { duration: 0.4, delay: instant || step < 2 ? 0 : Motion.stagger(0.002) });
-    go(r.line, { strokeDashoffset: step >= 3 ? 0 : 1 }, instant, { duration: 2, delay: instant ? 0 : 0.5, ease: 'easeInOut' });
+    go(r.digits, { opacity: step >= 3 ? 1 : 0 }, instant, { duration: 0.4, delay: instant || step < 3 ? 0 : Motion.stagger(0.002) });
   };
 
   Stepper.register('gpu', { steps: 4, setup, render });

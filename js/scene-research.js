@@ -7,7 +7,7 @@
     const cards = [...section.querySelectorAll('.pcard')];
     cards.forEach((c, i) => {
       c.style.left = `${800 + (i % 2) * 490}px`;
-      c.style.top = `${190 + Math.floor(i / 2) * 290}px`;
+      c.style.top = `${230 + Math.floor(i / 2) * 270}px`;
     });
     r = { cards };
   };
