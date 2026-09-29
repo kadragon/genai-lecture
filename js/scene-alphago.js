@@ -103,7 +103,7 @@
 
     const pruned = step === 4;
     go(r.restPaths, { opacity: pruned ? 0.07 : 0.55 }, instant, { duration: 1 });
-    go(r.chainPaths, { opacity: pruned ? 1 : 0.55, stroke: pruned ? 'var(--accent)' : 'var(--branch)' }, instant, { duration: 1 });
+    go(r.chainPaths, { opacity: pruned ? 1 : 0.55, stroke: pruned ? 'var(--accent)' : 'var(--muted)' }, instant, { duration: 1 });
     go(r.anchors, { opacity: pruned ? 1 : 0 }, instant, { delay: instant || !pruned ? 0 : Motion.stagger(0.15, { startDelay: 0.6 }) });
 
   };

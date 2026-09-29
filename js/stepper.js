@@ -9,7 +9,7 @@
 //   <section data-part="Ⅰ 원리">      part label, carried forward to later sections
 //   <section data-kicker="03 · 알파고"> header label
 //   <el data-show="2">  / "2-" / "1-3"  visible only in that step range (opacity)
-//   <el data-show="2-" data-rise>       also slides up 24px on entry
+//   <el data-show="2-" data-rise>       also slides up 12px on entry
 //   <el data-show="2-" data-delay="0.4">
 //
 // Ownership rules (each one cost a debugging round):
@@ -23,10 +23,17 @@ window.Stepper = (() => {
   const scenes = new Map();
   const register = (id, scene) => scenes.set(id, scene);
 
-  const EASE = [0.22, 1, 0.36, 1];
+  // Motion tokens live in css/deck.css (:root) so CSS and Motion share one curve.
+  const css = getComputedStyle(document.documentElement);
+  const ms = (name) => parseFloat(css.getPropertyValue(name)) / 1000;
+  const DUR = ms('--dur');            // entrances, fades
+  const DUR_SLOW = ms('--dur-slow');  // scene choreography default
+  const EASE = css.getPropertyValue('--ease').match(/[\d.]+/g).map(Number);
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const go = (els, props, instant, opts = {}) => {
     if (!els || els.length === 0) return;
-    return Motion.animate(els, props, instant ? { duration: 0 } : { duration: 0.8, ease: EASE, ...opts });
+    return Motion.animate(els, props, instant || REDUCED ? { duration: 0 } : { duration: DUR_SLOW, ease: EASE, ...opts });
   };
 
   // Deterministic randomness so every rehearsal looks the same.
@@ -85,8 +92,8 @@ window.Stepper = (() => {
     section.querySelectorAll('[data-show]').forEach((el) => {
       const on = inRange(el.dataset.show, step);
       const props = { opacity: on ? 1 : 0 };
-      if ('rise' in el.dataset) props.y = on ? 0 : 24;
-      go(el, props, instant, { duration: 0.6, delay: on && !instant ? Number(el.dataset.delay || 0) : 0 });
+      if ('rise' in el.dataset) props.y = on ? 0 : 12;
+      go(el, props, instant, { duration: DUR, delay: on && !instant ? Number(el.dataset.delay || 0) : 0 });
     });
   };
 

@@ -1,6 +1,6 @@
 // Ch.4 model: a library pours through a funnel and becomes a panel of tuned knobs.
 (() => {
-  const PALETTE = ['#3a3f4b', '#4a4237', '#35433f', '#463a44', '#2f3a4a', '#51483a', '#3d3a52'];
+  const PALETTE = ['#16171a', '#5b5d63', '#a9a59b', '#3f4147', '#cfcabe', '#7c7d82', '#2a2b2f'];
   const SHELF = 340;          // books stand on this y
   const MOUTH = { x: 960, y: 450 };
 

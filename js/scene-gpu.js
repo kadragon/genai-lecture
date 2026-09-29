@@ -11,9 +11,10 @@
     '...aa.aa...',
   ];
   const STARS = [[1, 13], [2, 3], [13, 1], [14, 11]];
-  const COLORS = { a: '#f5b544', w: '#f2eee7', '.': '#262a33' };
-  const DIM = { a: 'rgba(245,181,68,.28)', w: 'rgba(242,238,231,.2)', '.': '#1a1d24' };
-  const BLANK = 'rgba(255,255,255,0.035)';
+  // Paper palette: cobalt sprite, ink stars, sunken background (see :root in deck.css).
+  const COLORS = { a: '#2346d1', w: '#16171a', '.': '#dcd7cb' };
+  const DIM = { a: 'rgba(35,70,209,.22)', w: 'rgba(22,23,26,.18)', '.': '#e9e5db' };
+  const BLANK = 'rgba(22,23,26,0.05)';
 
   const sprite = () => {
     const grid = Array.from({ length: 16 }, () => Array(16).fill('.'));

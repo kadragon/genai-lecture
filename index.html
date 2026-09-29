@@ -14,10 +14,12 @@
   <div class="slides">
 
     <!-- Ⅰ title -->
-    <section data-part="Ⅰ 원리" data-steps="1">
+    <section class="opener" data-part="Ⅰ 원리" data-steps="1">
       <div class="title-num">PART 1</div>
-      <h1 class="title-main">생성형 AI는<br>어떻게 작동할까<span class="cursor"></span></h1>
-      <p class="title-sub" style="top: 760px">심심이에서 ChatGPT까지</p>
+      <div class="title-block">
+        <h1 class="title-main">생성형 AI는<br>어떻게 작동할까<span class="cursor"></span></h1>
+        <p class="title-sub">심심이에서 ChatGPT까지</p>
+      </div>
       <div class="title-toc">
         <span>심심이<b>01</b></span>
         <span>그래픽카드<b>02</b></span>
@@ -35,7 +37,7 @@
     <section data-scene="simsimi" data-kicker="01 · 심심이">
       <div class="phone-wrap">
         <div class="phone">
-          <div class="phone-top"><i></i>심심이</div>
+          <div class="phone-top">심심이</div>
           <div class="chat">
             <p class="msg me">심심아 안녕</p>
             <p class="msg bot">안녕! 오늘 기분 어때?</p>
@@ -203,7 +205,7 @@
 
     <!-- 06 Fake clause -->
     <section data-scene="fakelaw" data-kicker="06 · 환각">
-      <div class="doc">
+      <div class="doc sheet">
         <span class="tag">가상 예시</span>
         <h3>AI 플랫폼 도입 계획(안)</h3>
         <div class="bar" style="width: 92%"></div>
@@ -237,7 +239,7 @@
           <path class="direct" pathLength="1"/>
         </svg>
         <div class="q-chip">Q. 복잡한 질문</div>
-        <span class="miss" style="left: 700px; top: 262px" data-show="1-" data-delay="0.7">✕</span>
+        <span class="miss" style="left: 700px; top: 262px" data-show="1-" data-delay="0.7"><svg class="i"><use href="#i-x"/></svg></span>
         <div class="dart"></div>
       </div>
       <div class="duel right" data-show="2-">
@@ -274,7 +276,7 @@
 
         <div class="qcard" data-show="1">규정 A와 B가 충돌하는 조건을 모두 찾아줘</div>
         <svg viewBox="0 0 880 460"><path class="stairs" pathLength="1"/></svg>
-        <div class="ok" data-show="1" data-delay="2">✓ 정확</div>
+        <div class="ok" data-show="1" data-delay="2"><svg class="i"><use href="#i-check"/></svg>정확</div>
 
         <div class="qcard" data-show="2">1 + 1 은?</div>
         <div class="bubble-wrap" data-show="2"><div class="bubble">음… 먼저 1이라는 수의 정의부터 살펴보면… 덧셈의 교환법칙을 고려하고… 혹시 이진법이라면… 다시 처음부터 검토하면…</div></div>
@@ -297,12 +299,12 @@
     <section data-steps="2" data-kicker="07 · 생각의 사슬">
       <div class="think"><small>AI가 보여 주는 생각 과정</small>먼저 날짜 조건을 확인하고 → 예외 조항과 대조하면 → <b>답은 B</b></div>
       <div class="glass" data-show="1" data-rise>
-        <div class="gears">
-          <svg class="gear" viewBox="0 0 100 100"><use href="#gear"/></svg>
-          <svg class="gear r" viewBox="0 0 100 100"><use href="#gear"/></svg>
-          <svg class="gear s" viewBox="0 0 100 100"><use href="#gear"/></svg>
-          <svg class="gear" viewBox="0 0 100 100"><use href="#gear"/></svg>
-        </div>
+        <div class="matrix" aria-hidden="true">0.137  -0.882   0.451   0.029  -0.316   0.774  -0.051   0.608  -0.247   0.913  -0.402   0.186
+-0.564  0.211  -0.093   0.847   0.362  -0.715   0.428  -0.186   0.059   0.331  -0.978   0.644
+0.702  -0.138   0.519  -0.461   0.077   0.295  -0.823   0.146   0.690  -0.027   0.358  -0.511
+-0.249  0.936  -0.604   0.183  -0.372   0.058   0.721  -0.445   0.264  -0.897   0.119   0.483
+0.395  -0.071   0.812  -0.529   0.646  -0.214   0.037   0.958  -0.683   0.402  -0.156   0.271
+-0.818  0.447   0.162  -0.305   0.574  -0.936   0.289   0.013  -0.472   0.765   0.208  -0.639</div>
         <div class="frost"></div>
         <span class="tag">실제 내부 계산</span>
       </div>
@@ -337,7 +339,7 @@
         <span class="src">개념도 · Liu 외(2023) "Lost in the Middle"</span>
       </div>
       <div class="memo-wrap" data-show="3" data-rise data-delay="0.4"><div class="memo"><b>요약 한 장</b>· 목표: …<br>· 결정한 것: …<br>· 남은 일: …</div></div>
-      <div class="arrow-big" data-show="3" data-delay="0.9">→</div>
+      <div class="arrow-big" data-show="3" data-delay="0.9"><svg class="i"><use href="#i-arrow-right"/></svg></div>
       <div class="newchat card" data-show="3" data-rise data-delay="1.2">
         <div class="dots"><i></i><i></i><i></i></div>
         <h4>새 채팅</h4>
@@ -362,12 +364,12 @@
           <p>확률로 이어 붙인다<br>→ 그래서 <b>지어낼 수 있다</b></p>
         </div>
         <div class="card" data-show="2-" data-rise>
-          <div class="sym"><svg viewBox="0 0 170 140"><path d="M5 135 H45 V100 H85 V65 H125 V30 H165" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+          <div class="sym"><svg viewBox="0 0 170 140"><path d="M5 135 H45 V100 H85 V65 H125 V30 H165" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
           <h3>생각을 시키면</h3>
           <p>단계별로 따진다<br>→ <b>더 정확해진다</b></p>
         </div>
         <div class="card" data-show="3-" data-rise>
-          <div class="sym"><svg viewBox="0 0 170 140"><rect x="10" y="4" width="150" height="16" rx="8" fill="#8a6a3f"/><rect x="24" y="20" width="122" height="100" fill="#f5f1e8"/><rect x="40" y="42" width="70" height="9" rx="4" fill="#cbc1ab"/><rect x="60" y="62" width="70" height="9" rx="4" fill="#cbc1ab" opacity=".35"/><rect x="40" y="82" width="60" height="9" rx="4" fill="#e2b45c"/><rect x="10" y="120" width="150" height="16" rx="8" fill="#8a6a3f"/></svg></div>
+          <div class="sym"><svg viewBox="0 0 170 140" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"><rect x="24" y="6" width="122" height="128" rx="3"/><path d="M48 36h74M48 58h60"/><path d="M48 80h70M48 100h50" stroke-opacity=".2"/><path d="M48 118h40" stroke="var(--accent)"/></svg></div>
           <h3>대화가 길어지면</h3>
           <p>가운데부터 흐려진다<br>→ <b>새 채팅으로 이사</b></p>
         </div>
@@ -380,10 +382,12 @@
     </section>
 
     <!-- Ⅱ title -->
-    <section data-part="Ⅱ 잘 쓰는 법" data-steps="1">
+    <section class="opener" data-part="Ⅱ 잘 쓰는 법" data-steps="1">
       <div class="title-num">PART 2</div>
-      <h1 class="title-main">어떻게 하면<br>잘 쓸까<span class="cursor"></span></h1>
-      <p class="title-sub" style="top: 760px">프롬프트보다 맥락</p>
+      <div class="title-block">
+        <h1 class="title-main">어떻게 하면<br>잘 쓸까<span class="cursor"></span></h1>
+        <p class="title-sub">프롬프트보다 맥락</p>
+      </div>
       <div class="title-toc">
         <span>프롬프트<b>10</b></span>
         <span>자료를 줘라<b>11</b></span>
@@ -454,7 +458,7 @@
         <div class="city" style="left: 170px; top: 560px"><span>광주</span></div>
         <div class="city" style="left: 520px; top: 560px"><span>부산</span></div>
       </div>
-      <div class="pin-wrap"><div class="pin"></div></div>
+      <div class="pin-wrap"><div class="pin"><svg class="i"><use href="#i-map-pin"/></svg></div></div>
 
       <div class="bubble-me" style="left: 1000px; top: 180px">한국교원대학교 알려 줘</div>
       <div class="bubble-them" style="left: 1000px; top: 320px; width: 740px" data-show="0">혹시 '한국대학교'나 강원대학교를 말씀하시는 건가요?</div>
@@ -503,14 +507,14 @@
     <!-- 11 Post-it vs drawers -->
     <section data-steps="3" data-kicker="11 · 자료를 줘라">
       <div class="duo l card" data-show="0-" data-rise>
-        <h3>첨부파일<small>이번 한 번</small></h3>
+        <h3><svg class="i"><use href="#i-paperclip"/></svg>첨부파일<small>이번 한 번</small></h3>
         <div class="mini-chat">
           <i style="top: 40px; width: 60%"></i><i style="top: 90px; width: 40%; left: auto; right: 30px"></i><i style="top: 140px; width: 70%"></i>
           <div class="postit">회의록.pdf<br>예산안.xlsx</div>
         </div>
       </div>
       <div class="duo r card" data-show="1-" data-rise>
-        <h3>에이전트<small>계속</small></h3>
+        <h3><svg class="i"><use href="#i-archive"/></svg>에이전트<small>계속</small></h3>
         <div class="mini-cab">
           <div class="drawer"><span>규정집</span></div><div class="drawer"><span>지침</span></div><div class="drawer"><span>양식</span></div>
           <div class="drawer"><span>FAQ</span></div><div class="drawer"><span>법령 연결</span></div><div class="drawer"><span>예시</span></div>
@@ -536,7 +540,7 @@
       </div>
       <div class="idle" data-show="0">· · ·</div>
       <div class="bubble-them" style="left: 700px; top: 200px; width: 600px" data-show="1-" data-rise>어떤 결과가 필요하세요?<br>누가 읽나요?</div>
-      <div class="pen-wrap"><svg class="pen" viewBox="0 0 150 150"><rect x="62" y="10" width="26" height="100" rx="6" fill="#f5b544"/><path d="M62 110 L75 140 L88 110 Z" fill="#efe6d6"/><rect x="62" y="10" width="26" height="18" rx="6" fill="#c98a1d"/></svg></div>
+      <div class="pen-wrap"><svg class="pen i"><use href="#i-pen-line"/></svg></div>
 
       <div class="captions">
         <p data-show="0">똑똑한 비서 — 단, <em>시키지 않은 일</em>은 하지 않는다</p>
@@ -548,10 +552,10 @@
     <!-- 12 Tips -->
     <section data-steps="5" data-kicker="12 · 마음가짐">
       <div class="tips">
-        <div class="card" data-show="1-" data-rise><b>1</b><h3>좋은 프롬프트는 참고만</h3><p>틀에 얽매이지 말자</p></div>
-        <div class="card" data-show="2-" data-rise><b>2</b><h3>한 번에 완성하려 하지 않기</h3><p>여러 번 대화하며 다가간다</p></div>
-        <div class="card" data-show="3-" data-rise><b>3</b><h3>잘 나오면 되묻기</h3><p>"다음에도 이렇게 받으려면 어떻게 요청해?"</p></div>
-        <div class="card" data-show="4-" data-rise><b>4</b><h3>AI가 되묻게 하기</h3><p>"관련해서 내가 뭘 찾아봐야 할지 알려 줘"</p></div>
+        <div class="card" data-show="1-" data-rise><b>01</b><h3>좋은 프롬프트는 참고만</h3><p>틀에 얽매이지 말자</p></div>
+        <div class="card" data-show="2-" data-rise><b>02</b><h3>한 번에 완성하려 하지 않기</h3><p>여러 번 대화하며 다가간다</p></div>
+        <div class="card" data-show="3-" data-rise><b>03</b><h3>잘 나오면 되묻기</h3><p>"다음에도 이렇게 받으려면 어떻게 요청해?"</p></div>
+        <div class="card" data-show="4-" data-rise><b>04</b><h3>AI가 되묻게 하기</h3><p>"관련해서 내가 뭘 찾아봐야 할지 알려 줘"</p></div>
       </div>
 
       <div class="captions">
@@ -574,7 +578,7 @@
       </div>
       <div class="agent-drawer" data-show="3" data-delay="0.2"><span>한국어 교정 에이전트</span></div>
       <div class="guide-wrap" data-show="2">
-        <div class="guide">
+        <div class="guide sheet">
           <h4>교정 지침</h4>
           <p>· '가지고 있다' 직역 금지</p>
           <p>· '~를 통해' → '~에서', '~로'</p>
@@ -599,7 +603,7 @@
 
     <!-- 13 Real guideline -->
     <section data-steps="1" data-kicker="13 · 사례: 번역투">
-      <div class="rules">
+      <div class="rules sheet">
         <h3>한국어 문법<small>AI가 자료를 찾아 만든 지침 — 실제 사용 중</small></h3>
         <ul>
           <li><b>적용 범위</b> — 대면 텍스트만이 아니라 문서·주석·커밋 본문·리포트까지, 한국어로 쓰는 순간 아래 규칙 전부 적용</li>
@@ -625,7 +629,6 @@
       <div class="node" style="left: 930px; top: 480px" data-show="1-"><b>②</b>분명하게 고쳐 달라고</div>
       <div class="node" style="left: 700px; top: 710px" data-show="2-"><b>③</b>여러 번 대화</div>
       <div class="node" style="left: 470px; top: 480px" data-show="3-"><b>④</b>지침으로 정리</div>
-      <div class="orbit" data-show="4"><i></i></div>
 
       <div class="fixit" data-show="1">
         <div class="bubble-me no">그냥 고쳐 줘</div>
@@ -647,10 +650,12 @@
     </section>
 
     <!-- Ⅲ title -->
-    <section data-part="Ⅲ 실무 사례" data-steps="1">
+    <section class="opener" data-part="Ⅲ 실무 사례" data-steps="1">
       <div class="title-num">PART 3</div>
-      <h1 class="title-main">실무에서는<br>이렇게<span class="cursor"></span></h1>
-      <p class="title-sub" style="top: 760px">공문서와 영수증</p>
+      <div class="title-block">
+        <h1 class="title-main">실무에서는<br>이렇게<span class="cursor"></span></h1>
+        <p class="title-sub">공문서와 영수증</p>
+      </div>
       <div class="title-toc">
         <span>공문서 작성<b>15</b></span>
         <span>영수증 정리<b>16</b></span>
@@ -660,7 +665,7 @@
     <!-- 15 Text over hwp -->
     <section data-steps="2" data-kicker="15 · 공문서 작성">
       <div class="filebox card" style="left: 220px">
-        <div class="fileicon">HWP<span class="x">✕</span></div>
+        <div class="fileicon">HWP<span class="x"><svg class="i"><use href="#i-x"/></svg></span></div>
         <h3>한글 파일을 직접 만들게 하기</h3>
         <p>웹 환경에서는 어렵고<br>비용도 많이 든다</p>
       </div>
@@ -705,7 +710,7 @@
         <div class="ring-c r2" data-show="0-2" data-delay="0.4"><span>교육부</span></div>
         <div class="ring-c r3" data-show="0-2" data-delay="0.8"><span>우리 대학</span></div>
       </div>
-      <div class="report" data-show="3" data-rise>
+      <div class="report sheet" data-show="3" data-rise>
         <h4>AI 플랫폼 도입 계획(안)</h4>
         <div class="sec">1. 추진 배경</div><div class="l"></div><div class="l" style="width: 80%"></div>
         <div class="sec">2. 현황 및 문제점</div><div class="slot"></div>
@@ -734,7 +739,7 @@
 
     <!-- 16 Receipt -->
     <section data-scene="receipt" data-kicker="16 · 영수증 정리">
-      <div class="receipt">
+      <div class="receipt sheet">
         <h4>RECEIPT</h4>
         <div class="row"><span>512345 우유 2.3L</span><span>7,490</span></div>
         <div class="row disc"><span>  할인</span><span>-1,000</span></div>
@@ -772,10 +777,12 @@
     </section>
 
     <!-- Ⅳ title -->
-    <section data-part="Ⅳ 주의" data-steps="1">
+    <section class="opener" data-part="Ⅳ 주의" data-steps="1">
       <div class="title-num">PART 4</div>
-      <h1 class="title-main">주의할 점<span class="cursor"></span></h1>
-      <p class="title-sub" style="top: 640px">AI는 책임지지 않는다</p>
+      <div class="title-block">
+        <h1 class="title-main">주의할 점<span class="cursor"></span></h1>
+        <p class="title-sub">AI는 책임지지 않는다</p>
+      </div>
       <div class="title-toc">
         <span>개인정보<b>17</b></span>
         <span>판단과 책임<b>18</b></span>
@@ -787,7 +794,7 @@
     <!-- 17 Privacy -->
     <section data-scene="privacy" data-kicker="17 · 개인정보">
       <div class="pdoc-wrap">
-        <div class="pdoc">
+        <div class="pdoc sheet">
           <h4>학생 상담 기록</h4>
           <div class="f"><b>이름</b><span>홍길동</span><span class="alert" data-show="0"></span><span class="tape" data-show="1-" data-delay="0.2">홍○○</span></div>
           <div class="f"><b>주민번호</b><span>000000-0000000</span><span class="alert" data-show="0"></span><span class="tape" data-show="1-" data-delay="0.5">******-*******</span></div>
@@ -801,7 +808,7 @@
       </div>
       <div class="door out" data-show="2-" data-rise data-delay="0.2">
         <h4>외부 서비스</h4><p>ChatGPT 등</p>
-        <div class="verdict">개인정보 ✕</div>
+        <div class="verdict"><svg class="i"><use href="#i-x"/></svg>개인정보</div>
       </div>
 
       <div class="captions">
@@ -814,7 +821,7 @@
     <!-- 18 Stamp -->
     <section data-scene="stamp" data-kicker="18 · 판단과 책임">
       <svg class="avatar" style="left: 200px; top: 380px" viewBox="0 0 200 220"><use href="#ai"/></svg>
-      <div class="approval">
+      <div class="approval sheet">
         <h4>AI 플랫폼 도입 계획(안)</h4>
         <div class="signs"><div><span>담당</span></div><div><span>팀장</span></div><div><span>처장</span></div></div>
         <div class="l"></div><div class="l" style="width: 88%"></div><div class="l" style="width: 94%"></div><div class="l" style="width: 70%"></div>
@@ -833,11 +840,11 @@
 
     <!-- 18 Rules -->
     <section data-steps="4" data-kicker="18 · 판단과 책임">
-      <div class="tips" style="grid-template-columns: 1fr">
-        <div class="card" style="height: 180px" data-show="1-" data-rise><b>1</b><h3 style="display: inline; margin-left: 20px">가치 판단은 AI에게 맡기지 않는다</h3></div>
-        <div class="card" style="height: 180px" data-show="2-" data-rise><b>2</b><h3 style="display: inline; margin-left: 20px">"AI 권장"을 생각 없이 고르지 않는다</h3></div>
-        <div class="card" style="height: 180px" data-show="3-" data-rise><b>3</b><h3 style="display: inline; margin-left: 20px">규정·수치·계산은 내 눈으로 확인한다</h3></div>
-      </div>
+      <ol class="rule-list">
+        <li data-show="1-" data-rise>가치 판단은 AI에게 맡기지 않는다</li>
+        <li data-show="2-" data-rise>"AI 권장"을 생각 없이 고르지 않는다</li>
+        <li data-show="3-" data-rise>규정·수치·계산은 내 눈으로 확인한다</li>
+      </ol>
       <div class="captions">
         <p data-show="0">AI의 답을 쓸 때</p>
         <p data-show="3" class="strong">책임은 <em>사람</em>에게 남는다</p>
@@ -851,9 +858,9 @@
       <svg class="avatar" style="left: 1240px; top: 380px" viewBox="0 0 200 220"><use href="#ai"/></svg>
       <span class="who-tag" style="left: 1340px; top: 620px">Gemini</span>
       <div class="textbook">같은 교과서</div>
-      <div class="bubble-them" style="left: 380px; top: 230px" data-show="1-">정답은 A입니다</div>
-      <div class="bubble-them" style="left: 1180px; top: 230px" data-show="1-" data-delay="0.4">정답은 A입니다</div>
-      <div class="verdict-big" data-show="2" data-rise style="top: 110px">합의 ≠ 정답</div>
+      <div class="bubble-them" style="left: 380px; top: 270px" data-show="1-">정답은 A입니다</div>
+      <div class="bubble-them" style="left: 1180px; top: 270px" data-show="1-" data-delay="0.4">정답은 A입니다</div>
+      <div class="verdict-big" data-show="2" data-rise>합의 ≠ 정답</div>
 
       <div class="captions">
         <p data-show="0">둘 다 비슷한 자료로 배웠다</p>
@@ -874,7 +881,7 @@
       <div class="promise-wrap" data-show="1-2" data-delay="0.9">
         <div class="promise">"다음부터는<br>그러지 않겠습니다"<span class="wiped" data-show="2-">새 채팅에서는<br>백지</span></div>
       </div>
-      <svg class="avatar nod" style="left: 1480px; top: 380px; width: 150px; height: 165px" viewBox="0 0 200 220" data-show="3"><use href="#ai"/></svg>
+      <svg class="avatar" style="left: 1480px; top: 380px; width: 150px; height: 165px" viewBox="0 0 200 220" data-show="3"><use href="#ai"/></svg>
       <div class="bubble-them" style="left: 1260px; top: 240px" data-show="3" data-delay="0.6">네, 맞습니다! 제가 틀렸습니다</div>
 
       <div class="captions">
@@ -887,9 +894,9 @@
 
     <!-- 20 Closing -->
     <section data-scene="closing" data-kicker="20 · 마무리">
-      <div class="closing">다음 문장은</div>
+      <div class="closing"><span>다음 문장은</span></div>
       <div class="cursor-fly"></div>
-      <svg class="avatar" style="left: 860px; top: 560px" viewBox="0 0 200 220" data-show="1"><use href="#human"/></svg>
+      <svg class="avatar" style="left: 1500px; top: 330px" viewBox="0 0 200 220" data-show="1"><use href="#human"/></svg>
       <div class="captions">
         <p data-show="0">AI는 다음 말을 확률로 고른다</p>
         <p data-show="1" class="strong">다음 문장은 <em>여러분</em>이 씁니다<small>질의응답</small></p>
@@ -900,10 +907,21 @@
 </div>
 
 <svg width="0" height="0" style="position: absolute" aria-hidden="true">
-  <defs><path id="gear" fill-rule="evenodd" d="M88.0 50.0 L97.4 57.5 L95.7 64.8 L83.9 67.3 L80.7 72.3 L83.9 83.9 L78.2 88.8 L67.3 83.9 L61.7 86.1 L57.5 97.4 L50.0 98.0 L44.1 87.5 L38.3 86.1 L28.2 92.8 L21.8 88.8 L23.1 76.9 L19.3 72.3 L7.2 71.8 L4.3 64.8 L12.5 55.9 L12.0 50.0 L2.6 42.5 L4.3 35.2 L16.1 32.7 L19.3 27.7 L16.1 16.1 L21.8 11.2 L32.7 16.1 L38.3 13.9 L42.5 2.6 L50.0 2.0 L55.9 12.5 L61.7 13.9 L71.8 7.2 L78.2 11.2 L76.9 23.1 L80.7 27.7 L92.8 28.2 L95.7 35.2 L87.5 44.1 Z M50 36 A14 14 0 1 0 50.01 36 Z"/></defs>
+  <!-- Lucide icons, lucide-static 1.48.0 (ISC). Render with <svg class="i"><use href="#i-…"/></svg>. -->
   <defs>
-    <symbol id="ai" viewBox="0 0 200 220"><rect x="30" y="140" width="140" height="80" rx="40" fill="#2c303a"/><path d="M70 140 L100 172 L130 140 Z" fill="#f5b544"/><line x1="100" y1="12" x2="100" y2="32" stroke="#f5b544" stroke-width="6" stroke-linecap="round"/><circle cx="100" cy="10" r="8" fill="#f5b544"/><rect x="42" y="30" width="116" height="104" rx="44" fill="#f5b544"/><rect x="58" y="56" width="84" height="50" rx="24" fill="#1d1405"/><circle cx="84" cy="81" r="8" fill="#f5b544"/><circle cx="116" cy="81" r="8" fill="#f5b544"/></symbol>
-    <symbol id="human" viewBox="0 0 200 220"><rect x="30" y="140" width="140" height="80" rx="40" fill="#3a3f4a"/><circle cx="100" cy="80" r="52" fill="#9aa0ab"/><circle cx="82" cy="80" r="6" fill="#23262d"/><circle cx="118" cy="80" r="6" fill="#23262d"/><path d="M84 102 Q100 112 116 102" stroke="#23262d" stroke-width="5" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-pen-line" viewBox="0 0 24 24"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></symbol>
+    <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></symbol>
+  </defs>
+  <defs>
+    <!-- The model is a text field with a caret (the deck's through-line), never a robot. -->
+    <symbol id="ai" viewBox="0 0 200 220"><rect x="28" y="52" width="144" height="120" rx="8" fill="var(--surface)" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke"/><rect x="92" y="82" width="8" height="60" fill="var(--accent)"/></symbol>
+    <!-- The person: Lucide user-round, scaled. -->
+    <symbol id="human" viewBox="0 0 200 220"><g fill="var(--surface)" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round"><circle cx="100" cy="84" r="42" vector-effect="non-scaling-stroke"/><path d="M34 196a66 66 0 0 1 132 0" vector-effect="non-scaling-stroke"/></g></symbol>
   </defs>
 </svg>
 
@@ -942,7 +960,7 @@
     center: false, hash: true, fragmentInURL: true,
     controls: false, progress: true, slideNumber: false,
     transition: 'fade', transitionSpeed: 'fast',
-    autoAnimateDuration: 1.4, autoAnimateEasing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+    autoAnimateDuration: 1.0, autoAnimateEasing: 'cubic-bezier(0.65, 0, 0.35, 1)',
     plugins: [RevealNotes],
   });
   Stepper.attach();

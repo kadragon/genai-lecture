@@ -21,7 +21,7 @@
 
   const render = (step, instant) => {
     const { go } = Stepper;
-    r.words.forEach((w, i) => go(w, { opacity: step === 0 ? 0 : step === 1 ? 1 : 0.4, y: step === 0 ? 20 : 0 }, instant, {
+    r.words.forEach((w, i) => go(w, { opacity: step === 0 ? 0 : step === 1 ? 1 : 0.55, y: step === 0 ? 20 : 0 }, instant, {
       duration: 0.35, delay: instant || step !== 1 ? 0 : 0.3 + i * 0.22,
     }));
     go(r.stamp, { scale: step === 2 ? 1 : 1.8 }, instant, { duration: 0.35, delay: instant ? 0 : 0.5, ease: [0.5, 0, 0.75, 0] });
