@@ -163,6 +163,7 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .title-sub { margin: 36px 0 0; font-size: 34px; font-weight: 500; color: var(--muted); letter-spacing: -0.015em; }
 .title-hint { display: inline-block; margin: 28px 0 0; padding: 10px 20px; border-left: 4px solid var(--accent); background: var(--accent-soft); font-size: 26px; font-weight: 600; color: var(--accent); }
 .title-link { display: table; margin-top: 12px; }
+.title-link b { display: block; margin-top: 4px; font-size: 88px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 .title-toc { position: absolute; left: 1320px; right: var(--gutter); top: 204px; display: grid; font-size: 26px; font-weight: 500; color: var(--ink-2); }
 .title-toc span { display: flex; gap: var(--s-3); padding: 14px 0; border-bottom: var(--hair) solid var(--rule); }
 .title-toc b { order: -1; width: 40px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
