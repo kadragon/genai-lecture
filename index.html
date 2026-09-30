@@ -66,8 +66,8 @@
     </section>
 
     <!-- 02 GPU -->
-    <section data-scene="gpu" data-kicker="02 · GPU" data-term="Graphics Processing Unit">
-      <h2 class="bridge" data-show="0">사람이 답을 넣어 주지 않아도<br>기계가 <em>스스로</em> 배우려면?</h2>
+    <section data-scene="gpu" data-no-card data-kicker="02 · GPU" data-term="Graphics Processing Unit">
+      <h2 class="bridge" data-show="0">사람이 답을 넣어 주지 않아도<br>기계가 <em>스스로</em> 대답하려면?</h2>
       <div class="numstore">
         <div class="ns" data-show="1" data-rise><span class="src glyph">가</span><svg class="i"><use href="#i-arrow-right"/></svg><code>44032</code><small>글자 하나</small></div>
         <div class="ns" data-show="1" data-rise data-delay="0.4"><span class="src swatch"></span><svg class="i"><use href="#i-arrow-right"/></svg><code>35 · 70 · 209</code><small>그림의 점 하나</small></div>
@@ -85,7 +85,7 @@
         <p data-show="1">컴퓨터는 글자도, 그림도 <em>숫자</em>로 저장한다<small>그러니 배우는 일도 결국 숫자 계산</small></p>
         <p data-show="2">그 계산을 잘하는 부품이 게임용 그래픽카드<small>게임 화면은 수백만 개의 점(픽셀)</small></p>
         <p data-show="3">CPU는 차례로, GPU는 한꺼번에 칠한다</p>
-        <p data-show="4" class="strong">그림은 곧 숫자 계산 → <em>AI 학습</em>에 딱 맞았다<small>점마다 숫자 — 여기서는 0과 1로 줄여 표시</small></p>
+        <p data-show="4" class="strong">이런 빠른 계산을 하는 GPU가 <em>AI 학습</em>에 딱 맞았다<small>점마다 숫자 — 여기서는 0과 1로 줄여 표시</small></p>
       </div>
       <aside class="notes">1단계: '가'는 컴퓨터 안에서 44032, 파란 점 하나는 빨강·초록·파랑 세 숫자. 4단계: 오른쪽 위 문구에서 NVIDIA 주가 이야기를 말로 가볍게.</aside>
     </section>
@@ -106,7 +106,7 @@
       <div class="chip-anchor"><div class="chip" data-id="cand-3">9%</div></div>
 
       <div class="captions">
-        <p data-show="0">그 계산력으로 바둑에 도전했다<small>알파고(AlphaGo) · 2016 · 첫 수는 귀에서 시작한다</small></p>
+        <p data-show="0">그 계산력으로 바둑에 도전했다<small>알파고(AlphaGo) · 2016</small></p>
         <p data-show="1">둘 수 있는 다음 수</p>
         <p data-show="2">그다음, 또 그다음…</p>
         <p data-show="3">전부 계산할 수는 없다</p>
@@ -690,7 +690,7 @@
         <p data-show="0">이 두 문장, 어떻게 읽히나요?</p>
         <p data-show="1">AI가 가장 잘하는 언어는 영어<small>그래서 한국어에 번역투가 남는다</small></p>
         <p data-show="2">"번역투 고쳐 줘" → <em>겉만</em> 다듬어진다</p>
-        <p data-show="3" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 틀이 녹는다<small>책임지는 사람은 새 정보라 '내가', 회의 문장은 주어를 뺀다</small></p>
+        <p data-show="3" class="strong">근거 자료로 <em>지침</em>을 만들게 하면 한국어다운 문장이 된다<small>책임지는 사람은 새 정보라 '내가', 회의 문장은 주어를 뺀다</small></p>
         <p data-show="4">지침은 <em>저장</em>해 두고 계속 쓴다</p>
       </div>
       <aside class="notes">
@@ -867,6 +867,19 @@
       <p class="note p-link" data-show="0-">실습 자료 · 프롬프트와 예시 파일은 <b>practice.html</b></p>
     </section>
 
+    <!-- Practice 4 -->
+    <section class="practice" data-steps="1" data-kicker="실습 4 · 이미지 만들기" data-term="5분">
+      <ol class="p-steps" data-show="0-" data-rise><li>새 채팅에 오른쪽 요청을 보낸다</li><li>AI가 되물으면 답한다</li><li>받은 프롬프트를 채팅이나 <b>이미지</b> 메뉴에 넣는다</li><li>안 맞는 곳은 분명하게 고쳐 달라고 한다</li></ol>
+      <div class="p-prompt" data-show="0-" data-rise data-delay="0.15">
+        <span class="p-label">복사해서 붙여 넣기</span>
+        <p>직원 AI 특강 안내 포스터 이미지를 만들려고 해. 이미지 생성에 쓸 프롬프트를 써 줘. 분위기, 구도, 색, 들어갈 문구는 임의로 정하지 말고 나에게 물어봐.</p>
+      </div>
+      <div class="captions">
+        <p data-show="0" class="strong">그림 프롬프트도 <em>AI에게</em> 쓰게 한다<small>그림 속 글자는 깨지기 쉽다 — 넣을 문구는 짧게</small></p>
+      </div>
+      <p class="note p-link" data-show="0-">실습 자료 · 프롬프트와 예시 파일은 <b>practice.html</b></p>
+    </section>
+
     <!-- 16 Receipt -->
     <section data-scene="receipt" data-kicker="16 · 영수증 정리">
       <div class="receipt sheet">
@@ -906,8 +919,8 @@
       <p class="note">영수증 내용은 예시</p>
     </section>
 
-    <!-- Practice 4 -->
-    <section class="practice" data-steps="1" data-kicker="실습 4 · 영수증 정리와 검증" data-term="5분">
+    <!-- Practice 5 -->
+    <section class="practice" data-steps="1" data-kicker="실습 5 · 영수증 정리와 검증" data-term="5분">
       <ol class="p-steps" data-show="0-" data-rise><li>실습 자료의 <b>영수증 이미지</b>를 내려받아 첨부한다</li><li>오른쪽 요청을 보낸다</li><li>표의 금액을 계산기로 더해 영수증 합계와 맞춰 본다</li><li>틀린 곳이 있으면 어디가 틀렸는지 알려 주고 다시 받는다</li></ol>
       <div class="p-prompt" data-show="0-" data-rise data-delay="0.15">
         <span class="p-label">복사해서 붙여 넣기</span>

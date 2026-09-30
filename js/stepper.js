@@ -9,6 +9,7 @@
 //   <section data-part="Ⅰ 원리">      part label, carried forward to later sections
 //   <section data-kicker="03 · 알파고"> header label; also marks the chapter
 //   <section data-term="AlphaGo">      English term shown after the header label
+//   <section data-no-card>             skip the chapter card when entering this slide
 //   <el data-show="2">  / "2-" / "1-3"  visible only in that step range (opacity)
 //   <el data-show="2-" data-rise>       also slides up 12px on entry
 //   <el data-show="2-" data-delay="0.4">
@@ -109,7 +110,7 @@ window.Stepper = (() => {
 
   // Chapter card: stepping forward into a new chapter covers the slide with its
   // number and title for a beat, then wipes upward to reveal it. Skipped between
-  // auto-animate slides, whose morph is the transition.
+  // auto-animate slides, whose morph is the transition, and on data-no-card slides.
   let card, cardAnims = [];
   const chapterCard = (to, from) => {
     cardAnims.forEach((a) => a.stop());
@@ -123,7 +124,7 @@ window.Stepper = (() => {
     card.style.visibility = 'hidden';
     const forward = from && Reveal.getIndices(to).h === Reveal.getIndices(from).h + 1;
     const morph = from && 'autoAnimate' in to.dataset && 'autoAnimate' in from.dataset;
-    if (REDUCED || !forward || morph || !to.dataset.chapter || to.dataset.chapter === from.dataset.chapter) return;
+    if (REDUCED || !forward || morph || 'noCard' in to.dataset || !to.dataset.chapter || to.dataset.chapter === from.dataset.chapter) return;
     card.children[0].textContent = to.dataset.chapterPart;
     card.children[1].textContent = to.dataset.chapter;
     card.children[2].textContent = to.dataset.chapterTitle;
