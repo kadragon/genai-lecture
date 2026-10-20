@@ -190,7 +190,7 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .mnist-rule.struck p { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 3px; }
 .mnist-rule.struck p b { color: var(--muted); }
 /* steps 1-2: real samples, then the learning loop on three of them */
-.mnist-pile { position: absolute; left: var(--gutter); top: 200px; display: grid; grid-template-columns: repeat(4, 124px); gap: 14px; }
+.mnist-pile { position: absolute; left: var(--gutter); top: 190px; display: grid; grid-template-columns: repeat(2, 240px); gap: 24px 40px; }
 .mini { position: relative; width: 124px; box-sizing: border-box; padding: 10px 10px 36px; background: var(--surface); border: var(--hair) solid var(--rule); border-radius: var(--radius); }
 .mini-photo { width: 100%; display: block; image-rendering: pixelated; background: #000; }
 .mini-label { position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: 20px; font-weight: 700; color: var(--accent); }
@@ -270,9 +270,6 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .blank span { color: var(--accent); white-space: nowrap; }
 
 /* ─── 04 Model ───────────────────────────────────────────────────────── */
-.book { position: absolute; border-radius: 1px; }
-.funnel { position: absolute; left: 560px; top: 380px; width: 800px; height: 180px; }
-.funnel path { fill: none; stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .panel { position: absolute; left: 560px; top: 570px; width: 800px; height: 250px; box-sizing: border-box; display: grid; grid-template-columns: repeat(12, 1fr); align-content: center; justify-items: center; gap: 14px 0; border-radius: var(--radius); background: var(--surface); border: var(--line) solid var(--ink); }
 .knob { width: 44px; height: 44px; border-radius: 50%; border: var(--line) solid var(--ink); box-sizing: border-box; position: relative; }
 .knob::after { content: ''; position: absolute; left: 50%; top: 3px; width: 3px; height: 14px; margin-left: -1.5px; border-radius: 2px; background: var(--accent); }
@@ -280,6 +277,38 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .panel.big .knob { width: 76px; height: 76px; border-width: 3px; }
 .panel.big .knob::after { top: 5px; width: 5px; height: 24px; margin-left: -2.5px; }
 .knob-vals { position: absolute; left: 560px; top: 846px; width: 800px; font-size: var(--t-label); color: var(--muted); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* Text enters from the left; the panel stays visible throughout training. */
+[data-scene="model"] .panel { left: 1040px; top: 300px; width: 760px; height: 420px; gap: 36px 0; }
+[data-scene="model"] .knob-vals { left: 1040px; top: 755px; width: 760px; font-size: 22px; white-space: nowrap; }
+.training-source, .training-label { position: absolute; top: 205px; font-size: 36px; font-weight: 700; }
+.training-source { left: 120px; }
+.training-label { left: 1040px; }
+.training-source span, .training-label span { display: block; margin-top: 10px; color: var(--muted); font-size: 24px; font-weight: 400; }
+.training-stream { position: absolute; left: 120px; top: 320px; width: 900px; height: 390px; overflow: hidden; mask-image: linear-gradient(to right, #000 78%, transparent); }
+.training-sentence { position: absolute; top: calc(var(--lane) * 62px); left: 0; padding: 10px 18px; border-left: 3px solid var(--accent); background: var(--surface); color: var(--ink-2); font-size: 28px; white-space: nowrap; opacity: 0; }
+.training-sentence:nth-child(-n+6) { opacity: 1; }
+.training-arrow { position: absolute; left: 940px; top: 465px; font-size: 60px; color: var(--accent); }
+.training-loop { position: absolute; left: 120px; top: 770px; font-size: 28px; color: var(--accent); font-weight: 600; }
+.model-training .training-sentence { animation: training-text 2.4s var(--delay) both linear; }
+.model-training .knob { animation: training-tune 9.2s var(--tune-delay) both ease-in-out; }
+.model-trained .knob { transform: rotate(var(--trained)); }
+@keyframes training-text {
+  0% { transform: translateX(-70px); opacity: 0; }
+  12%, 55% { opacity: 1; }
+  100% { transform: translateX(900px); opacity: 0; }
+}
+@keyframes training-tune {
+  0%, 8% { transform: rotate(0deg); }
+  25% { transform: rotate(var(--early)); border-color: var(--accent); }
+  48% { transform: rotate(var(--middle)); }
+  72% { transform: rotate(var(--near)); border-color: var(--accent); }
+  100% { transform: rotate(var(--trained)); border-color: var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .model-training .training-sentence { animation: none; }
+  .model-training .knob { animation: none; transform: rotate(var(--trained)); }
+}
 
 /* ─── 05 LLM ─────────────────────────────────────────────────────────── */
 .llm-title { position: absolute; left: var(--gutter); top: 170px; margin: 0; font-size: var(--t-h1); font-weight: 700; letter-spacing: -0.045em; line-height: 1; }
@@ -704,3 +733,31 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .practice .p-link b { color: var(--accent); }
 .practice .p-steps, .practice .p-prompt p { word-break: keep-all; }
 .practice .p-steps b { font-weight: 700; color: var(--accent); }
+
+/* Explicit counterexample and illustrative decoding panel. */
+.mnist-rule { left: 1080px; right: 100px; padding: 30px; }
+.mnist-rule p { font-size: 31px; }
+.mnist-rule em { font-size: 27px; }
+.rule-counterexample { outline: 4px solid var(--accent); }
+.rule-counterexample .mini-label { font-size: 22px; color: var(--accent); white-space: nowrap; }
+.hallu-predict { position: absolute; left: var(--gutter); right: var(--gutter); top: 590px; padding: 20px 30px; background: var(--surface); border: 2px solid var(--rule); border-radius: var(--radius); }
+.predict-context { font-size: 25px; font-weight: 600; margin-bottom: 16px; }
+.predict-candidates { display: flex; gap: 28px; }
+.predict-candidate { display: flex; align-items: center; gap: 12px; flex: 1; font-size: 24px; padding: 10px; border: 2px solid transparent; }
+.predict-candidate > div { flex: 1; height: 14px; background: var(--paper-2); }
+.predict-candidate i { display: block; height: 100%; background: var(--accent); }
+.predict-candidate.selected { border-color: var(--accent); color: var(--accent); }
+.predict-status { font-size: 24px; margin-top: 16px; color: var(--muted); }
+.korea-outline { position: absolute; inset: 0; width: 100%; height: 100%; }
+.korea-outline path, .korea-outline ellipse { fill: var(--paper-2); stroke: var(--rule-2); stroke-width: 3; stroke-linejoin: round; }
+.korea-outline text { fill: var(--muted); font-size: 20px; }
+
+[data-scene="map"] .pin-wrap { left: 523.8px; top: 280.4px; }
+
+/* Compare the ambiguous 1/7 pair at a readable size before the learning loop. */
+.mnist-pile .mini { width: 240px; padding: 12px 12px 42px; }
+.mnist-pile .mini-label { font-size: 28px; }
+.mnist-pile .verdict { width: 76px; font-size: 24px; }
+.mnist-loop { left: 1080px; }
+.mnist-heap-chip { left: 1230px; }
+.mnist-heap-chip span { font-size: 30px; }

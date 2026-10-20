@@ -1,18 +1,12 @@
-// Ch.1 MNIST: toy 3x3 digits a person can write a rule for, real samples
-// (assets/mnist/*, 28x28 from the MNIST test set) that break the rule, a
-// learning loop that marks one card wrong then fixes it, and the pile
-// growing into a 70k heap whose compute bridges into GPU.
+// Ch.1: a simple 1/7 rule, ambiguous handwriting, then learning from labels.
+// MNIST images are unchanged 28x28 test samples; filenames use 60000 + test index.
 (() => {
   // Step 0 toy digits: '#' = white stroke, '.' = black.
-  const TINY = [['0', '####.####'], ['1', '.#..#..#.']];
-  const ZEROS = ['0-60003', '0-60013', '0-60025', '0-60028', '0-60055', '0-60069'];
-  const ONES = ['1-60002', '1-60005', '1-60014', '1-60029', '1-60037', '1-60039'];
-  // 4-column pile: two columns of 0s, then two of 1s, per row.
-  const PILE = ZEROS.flatMap((z, i) => (i % 2 ? [] : [z, ZEROS[i + 1], ONES[i], ONES[i + 1]]));
-  // The loop: the curly 0 (0-60025) is guessed wrong then fixed, then two more.
-  const QUIZ = [4, 2, 9];
+  const TINY = [['1', '.#..#..#.'], ['7', '###..#.#.']];
+  const PILE = ['1-60716', '7-60017', '1-60002', '7-60000'];
+  const QUIZ = [0, 1, 2];
   const HEAP = 22 * 9;
-  const ALL = ['0-60010', '1-60031', '7-60000', '7-60017', ...ZEROS, ...ONES];
+  const ALL = [...PILE, '0-60010', '0-60025', '1-60031', '1-60039'];
 
   let r;
 
@@ -38,14 +32,14 @@
     const pile = section.querySelector('.mnist-pile');
     PILE.forEach((f) => {
       const m = document.createElement('div');
-      m.className = 'mini';
+      m.className = ['1-60716', '7-60017'].includes(f) ? 'mini rule-counterexample' : 'mini';
       const img = document.createElement('img');
       img.className = 'mini-photo';
       img.src = `assets/mnist/${f}.png`;
       img.alt = `손글씨 ${f[0]} — MNIST 실제 샘플`;
       const tag = document.createElement('span');
       tag.className = 'mini-label';
-      tag.textContent = f[0];
+      tag.textContent = `정답 ${f[0]}`;
       m.append(img, tag);
       pile.append(m);
     });
@@ -112,14 +106,14 @@
       // The loop, beat by beat: a wrong guess, the fix, then two right.
       go(r.verdicts, { opacity: 0 }, true);
       at(900, () => {
-        mark(0, '✗', false);
+        mark(0, '7 ✗', false);
         push(go(r.quizCards[0], { x: [0, -8, 8, -5, 5, 0] }, false, { duration: 0.4 }));
       });
-      at(2000, () => mark(0, '✓', true));
-      at(2600, () => mark(1, '✓', true));
-      at(3100, () => mark(2, '✓', true));
+      at(2000, () => mark(0, '1 ✓', true));
+      at(2600, () => mark(1, '7 ✓', true));
+      at(3100, () => mark(2, '1 ✓', true));
     } else if (step >= 2) {
-      r.verdicts.forEach((s) => { s.textContent = '✓'; s.classList.add('good'); });
+      r.verdicts.forEach((s, i) => { s.textContent = `${PILE[QUIZ[i]][0]} ✓`; s.classList.add('good'); });
       go(r.verdicts, { opacity: 1 }, true);
     } else {
       go(r.verdicts, { opacity: 0 }, true);
