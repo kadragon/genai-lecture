@@ -1,49 +1,51 @@
-// Ch.4 model: a library pours through a funnel and becomes a panel of tuned knobs.
+// Training text flows into a parameter panel; repeated small updates remain as numbers.
 (() => {
-  const PALETTE = ['#16171a', '#5b5d63', '#a9a59b', '#3f4147', '#cfcabe', '#7c7d82', '#2a2b2f'];
-  const SHELF = 340;          // books stand on this y
-  const MOUTH = { x: 960, y: 450 };
+  const SENTENCES = [
+    '아침 햇살이 창문으로 들어온다.', '학생들이 도서관에서 책을 읽는다.',
+    '오늘 회의는 오후 세 시에 시작한다.', '비가 내리면 땅이 촉촉해진다.',
+    '새로운 질문이 새로운 생각을 만든다.', '기차는 정해진 시간에 출발했다.',
+    '서로 다른 의견을 듣고 답을 찾는다.', '봄이 오면 나무에 새잎이 돋는다.',
+    '실험 결과를 표로 정리했다.', '친구와 함께 저녁을 준비한다.',
+    '바람이 불어 구름이 천천히 움직인다.', '배운 내용을 자기 말로 설명한다.',
+  ];
 
-  // Shared with ch.5, whose panel must show the same trained knobs after the morph.
+  // Shared with the LLM slide so the trained panel retains the same values.
   window.knobAngles = (n) => {
     const rng = Stepper.rng(11);
     return Array.from({ length: n }, () => Math.round(rng() * 300 - 150));
   };
 
   let r;
-
   const setup = (section) => {
-    const rng = Stepper.rng(5);
-    const books = [];
-    for (let x = 180; x < 1720;) {
-      const w = 30 + rng() * 18, h = 110 + rng() * 70;
-      const b = document.createElement('div');
-      b.className = 'book';
-      Object.assign(b.style, { left: `${x}px`, top: `${SHELF - h}px`, width: `${w}px`, height: `${h}px`, background: PALETTE[books.length % PALETTE.length] });
-      section.append(b);
-      books.push({ el: b, dx: MOUTH.x - (x + w / 2), dy: MOUTH.y - (SHELF - h / 2) });
-      x += w + 6;
+    const stream = section.querySelector('.training-stream');
+    for (let i = 0; i < 36; i++) {
+      const sentence = document.createElement('div');
+      sentence.className = 'training-sentence';
+      sentence.textContent = SENTENCES[i % SENTENCES.length];
+      sentence.style.setProperty('--lane', i % 6);
+      sentence.style.setProperty('--delay', `${Math.floor(i / 6) * 1.5 + (i % 6) * 0.12}s`);
+      stream.append(sentence);
     }
-    const panel = section.querySelector('.panel');
     const angles = window.knobAngles(48);
-    const knobs = angles.map(() => {
-      const k = document.createElement('div');
-      k.className = 'knob';
-      panel.append(k);
-      return k;
+    angles.forEach((angle, i) => {
+      const knob = document.createElement('div');
+      knob.className = 'knob';
+      knob.style.setProperty('--trained', `${angle}deg`);
+      knob.style.setProperty('--early', `${angle * 0.3 + (i % 2 ? 12 : -12)}deg`);
+      knob.style.setProperty('--middle', `${angle * 0.7}deg`);
+      knob.style.setProperty('--near', `${angle + (i % 2 ? -7 : 7)}deg`);
+      knob.style.setProperty('--tune-delay', `${0.85 + (i % 12) * 0.045}s`);
+      section.querySelector('.panel').append(knob);
     });
-    r = { books, knobs, angles };
+    r = { section };
   };
 
   const render = (step, instant) => {
-    const { go } = Stepper;
-    const poured = step >= 1;
-    r.books.forEach((b, i) => go(b.el, poured
-      ? { x: b.dx, y: b.dy, scale: 0.15, opacity: 0 }
-      : { x: 0, y: 0, scale: 1, opacity: 1 }, instant, { duration: 0.9, delay: instant || !poured ? 0 : i * 0.035, ease: 'easeIn' }));
-    r.knobs.forEach((k, i) => go(k, { rotate: poured ? r.angles[i] : 0 }, instant, {
-      duration: 0.6, delay: instant || !poured ? 0 : 1.2 + i * 0.03,
-    }));
+    r.section.classList.remove('model-training', 'model-trained');
+    // Restart from a deterministic state on backwards navigation and rapid stepping.
+    void r.section.offsetWidth;
+    r.section.classList.toggle('model-trained', step >= 2 || (instant && step === 1));
+    r.section.classList.toggle('model-training', step === 1 && !instant);
   };
 
   Stepper.register('model', { steps: 3, setup, render });

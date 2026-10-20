@@ -1,6 +1,4 @@
-// Ch.2 GPU: the compute pile from ch.1, the game graphics card that does it
-// all at once, then handwritten digits answered with probabilities (bridge
-// into AlphaGo).
+// Handwriting chapter: GPU compute and digit probabilities lead into text prediction.
 (() => {
   let r;
 

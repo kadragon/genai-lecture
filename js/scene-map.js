@@ -1,8 +1,8 @@
 // Ch.11 the AI that doesn't know us: the pin lands on the wrong campus, then the
 // right one — but its calendar stops in the past.
 (() => {
-  const WRONG = [390, 130];   // 춘천, map-local px
-  const RIGHT = [300, 330];   // 청주
+  const WRONG = [403.8, 110.4];   // 춘천, map-local px
+  const RIGHT = [357.5, 262.8];   // 청주
   let r;
   const setup = (section) => { r = { pin: section.querySelector('.pin-wrap') }; };
   const render = (step, instant) => {
