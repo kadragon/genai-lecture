@@ -63,14 +63,24 @@
         <p data-show="2">예시에서 규칙을 찾는 <em>기계학습</em><small>컴퓨터가 예측을 정답과 비교하며 내부 숫자를 조정한다</small></p>
         <p data-show="3" class="strong">규칙을 찾으려면 예측·비교·조정을 <em>수없이 반복</em><small>수많은 예시를 여러 차례 학습하니 계산이 산더미가 된다</small></p>
       </div>
-      <p class="note" data-show="1-">이미지: MNIST 실제 샘플(28×28) · 정답은 데이터 라벨 · 학습 과정은 설명용 연출</p>
-      <aside class="notes">0단계: 단순하게 쓴 1과 7에 사람이 규칙을 붙인다. 1단계: 위쪽 두 실제 손글씨를 비교한다. 왼쪽은 윗획이 있지만 데이터의 정답은 1, 오른쪽은 7이다. 모든 글씨를 구별할 규칙을 일일이 정하기 어렵다는 점을 짚는다. 2단계: 그래서 예시와 정답을 주고 컴퓨터가 규칙을 찾게 한다. 예측과 정답을 비교해 내부 숫자를 조정하는 과정을 반복한다. 이것을 기계학습(Machine Learning)이라고 부른다. 7로 예측했다가 1로 바로잡는 표시는 학습 원리를 설명하는 연출이다. 3단계: 한 장이 아니라 수많은 예시를 여러 차례 예측·비교·조정하므로 계산이 산더미가 된다. GPU로 연결한다.</aside>
+      <p class="note" data-show="0-">이미지: MNIST 실제 샘플(28×28) · 정답은 데이터 라벨 · 학습 과정은 설명용 연출</p>
+      <aside class="notes">0단계: 실제 MNIST 손글씨 1과 7에 사람이 규칙을 붙인다. 1단계: 위쪽 두 실제 손글씨를 비교한다. 왼쪽은 윗획이 있지만 데이터의 정답은 1, 오른쪽은 7이다. 모든 글씨를 구별할 규칙을 일일이 정하기 어렵다는 점을 짚는다. 2단계: 그래서 예시와 정답을 주고 컴퓨터가 규칙을 찾게 한다. 예측과 정답을 비교해 내부 숫자를 조정하는 과정을 반복한다. 이것을 기계학습(Machine Learning)이라고 부른다. 7로 예측했다가 1로 바로잡는 표시는 학습 원리를 설명하는 연출이다. 3단계: 한 장이 아니라 수많은 예시를 여러 차례 예측·비교·조정하므로 계산이 산더미가 된다. GPU로 연결한다.</aside>
     </section>
 
     <!-- 01 GPU -->
     <section data-scene="gpu" data-no-card data-kicker="01 · 손글씨" data-term="Graphics Processing Unit">
-      <h2 class="bridge" data-show="0">예시 7만 장을 되풀이해 보려니<br>계산이 <em>산더미</em></h2>
-      <h2 class="bridge" data-show="1">게임용 그래픽카드(GPU)가<br>한꺼번에 <em>계산</em>해 줬다</h2>
+      <h2 class="bridge" data-show="0">그래픽카드(GPU)가<br>한꺼번에 <em>계산</em>해 줬다</h2>
+      <div class="digit-training" data-show="1">
+        <div class="learn-samples" aria-label="학습에 사용하는 손글씨 예시"></div>
+        <div class="learn-input"><span>이 숫자는 뭘까?</span><img src="assets/mnist/1-60716.png" alt="MNIST 손글씨 예시"><b>손글씨 카드</b></div>
+        <div class="learn-robot">
+          <div class="learn-thought"><strong class="learn-guess">음… 어떤 숫자일까?</strong><span class="learn-confidence">모양을 살펴보는 중</span></div>
+          <img class="robot-mascot" src="assets/learning-robot.png" alt="손글씨를 보며 생각하는 친근한 로봇">
+        </div>
+        <div class="learn-feedback"><span>정답을 확인해 보자</span><strong class="learn-error">실제 정답: 1</strong><span class="learn-target-prob">모델이 1에 준 확률: 25%</span><p class="learn-reaction">아하, 이건 1이구나!</p></div>
+        <div class="learn-progress"><span class="learn-round">보고 → 맞혀 보고 → 정답으로 배우기</span><b class="learn-update">하나씩 배우는 중</b></div>
+      </div>
+      <p class="note" data-show="1">로봇의 말풍선과 확률은 학습 원리를 설명하는 연출 · 실제 학습 결과가 아님</p>
       <div class="gpu-prob" data-show="2" data-rise>
         <div class="prob-row">
           <div class="photo-card"><img src="assets/mnist/7-60000.png" alt="손글씨 7 — MNIST 실제 샘플"></div>
@@ -90,11 +100,11 @@
       <p class="note" data-show="2">이미지: MNIST 손글씨 샘플 실물 · 수치는 설명용 예시</p>
 
       <div class="captions">
-        <p data-show="0">엄청난 양의 <em>계산</em>이 필요했다</p>
-        <p data-show="1">그래서 <em>많이</em> 배울 수 있게 됐다<small>원래 게임 화면을 그리던 부품</small></p>
+        <p data-show="0">그래서 <em>많이</em> 배울 수 있게 됐다<small>원래 게임 화면을 그리던 부품</small></p>
+        <p data-show="1">맞혀 보고, 정답을 확인하며 <em>배운다</em><small>다음에는 정답에 더 높은 확률을 주도록 조금씩 조정한다</small></p>
         <p data-show="2" class="strong">이런 모양이면 7일 <em>가능성 92%</em><small>정답 하나 대신 가능성으로 답한다 — 헷갈리는 글씨도</small></p>
       </div>
-      <aside class="notes">1단계: 게임 화면을 한꺼번에 그리던 부품이 학습 계산에도 맞았다는 것만 짚는다. 2단계: 앞서 본 1·7 구별을 가능성 막대로 연결한다. "일기예보의 비 올 확률처럼, 정답 하나 대신 가능성으로 답합니다." 이제 예시로 패턴을 배운다는 생각을 글로 연결한다.</aside>
+      <aside class="notes">0단계: 게임 화면을 한꺼번에 그리던 부품이 학습 계산에도 맞았다는 것만 짚는다. 1단계: 손글씨를 보고 예측하고 정답과 비교한 뒤 내부 숫자를 조정하는 흐름을 보여 준다. 서로 다른 손글씨 예시를 순서대로 읽고 반복 학습하는 설명용 연출이며, 실제 학습에서는 여러 예시를 반복하고 모든 예측이 매번 좋아지는 것은 아니다. 2단계: 앞서 본 1·7 구별을 가능성 막대로 연결한다. "일기예보의 비 올 확률처럼, 정답 하나 대신 가능성으로 답합니다." 이제 예시로 패턴을 배운다는 생각을 글로 연결한다.</aside>
     </section>
 
     <!-- 02 From images to language -->
@@ -109,24 +119,18 @@
 
     <!-- 02 Token -->
     <section data-scene="token" data-kicker="02 · 글씨 예측: 토큰" data-term="Token">
-      <div class="tok-head">I went to school.<span>=</span>나는 학교에 갔다.</div>
-      <div class="tok-legend">
-        <span class="full"><i></i>토큰(token) · 온전한 조각</span>
-        <span class="part"><i></i>글자의 일부만 담긴 조각</span>
-      </div>
-
+      <div class="tok-head">I go to school.<span>=</span>나는 학교에 갑니다.</div>
+      <div class="tok-legend"><span class="full"><i></i>상자 하나 = 토큰 하나</span><span>␣ = 토큰에 포함된 공백</span></div>
       <div class="captions">
-        <p data-show="0">AI가 예측하는 ‘말’은 사실 <em>토큰</em>이라는 조각<small>이 영어 문장은 단어 하나가 조각 하나</small></p>
-        <p data-show="1">옛 모델은 한국어를 <em>4배 넘게</em> 잘게 쪼갰다<small>토큰이 많을수록 느리고 비싸다 · 학습한 한국어 자료도 적었다</small></p>
-        <p data-show="2">모델이 바뀔 때마다 조각이 커졌다</p>
-        <p data-show="3" class="strong">최신 모델은 한국어도 <em>잘 읽는다</em></p>
+        <p data-show="0">영어도 단어와 문장부호를 <em>토큰</em>으로 나눈다<small>이 예시는 단어 단위 · 긴 단어는 여러 토큰으로 나뉘기도 한다</small></p>
+        <p data-show="1" class="strong">한국어도 글을 <em>토큰</em>으로 나눈다<small>띄어쓰기와 토큰의 경계가 꼭 같지는 않다</small></p>
       </div>
-      <p class="note">측정: OpenAI tiktoken — gpt2 · cl100k_base · o200k_base</p>
+      <p class="note">실제 분할 예시: tiktoken · o200k_base · 분할 방식은 토크나이저에 따라 다름</p>
     </section>
 
     <!-- 02 Model -->
     <section data-auto-animate data-scene="model" data-kicker="02 · 글씨 예측: 모델" data-term="Model · Parameter">
-      <div class="training-source" data-show="0-1">수많은 문장 <span>읽고 · 예측하고 · 정답과 비교</span></div>
+      <div class="training-source" data-show="0-1">다양한 언어와 수식 <span>읽고 · 예측하고 · 정답과 비교</span></div>
       <div class="training-stream" data-show="0-1" aria-hidden="true"></div>
       <div class="training-arrow" data-show="0-1" aria-hidden="true">→</div>
       <div class="training-label">모델 내부 <span>파라미터 · 조정되는 숫자</span></div>
@@ -196,18 +200,34 @@
       </div>
     </section>
 
+    <!-- 03 Model examples -->
+    <section data-kicker="03 · 다양한 모델" data-term="AI Models" data-no-card>
+      <h2 class="model-family-title">이렇게 다양한 AI 모델이 있다</h2>
+      <div class="model-families">
+        <article class="model-family"><span>OpenAI</span><h3>GPT-6.1 Sol</h3><p>지피티 6.1 솔</p></article>
+        <article class="model-family"><span>OpenAI</span><h3>GPT-6 Astra</h3><p>지피티 6 아스트라</p></article>
+        <article class="model-family"><span>Anthropic</span><h3>Claude Fable 5.1</h3><p>클로드 페이블 5.1</p></article>
+        <article class="model-family"><span>Google</span><h3>Gemini 4 Argon</h3><p>제미나이 4 아르곤</p></article>
+        <article class="model-family image-model"><span>Google · 이미지 생성·편집</span><h3>Nano Banana 2.1</h3><p>나노 바나나 2.1</p></article>
+        <article class="model-family china-models"><span>중국 모델</span><h3>DeepSeek · Kimi · Qwen</h3><p>딥시크 · 키미 · 큐웬 등</p><small>Kimi: Moonshot AI · Qwen: Alibaba</small></article>
+      </div>
+      <div class="captions"><p class="strong">글을 다루는 모델부터 <em>이미지를 만드는 모델</em>까지<small>모델마다 잘하는 일과 특징이 다르다</small></p></div>
+      <p class="note">모델 예시 · 중국 모델은 계열명으로 묶어 표시 · 2026. 10. 22. 확인</p>
+      <aside class="notes">GPT와 Claude는 모두 모델 계열명으로 쓰이므로 개별 예시는 버전을 포함해 표기한다. 중국 모델은 요청에 따라 계열명을 묶어 소개한다. Moonshot AI는 회사 이름이고 해당 모델 계열은 Kimi다. Nano Banana는 이미지 생성·편집 모델로 구분한다. 전체 목록이나 성능 순위가 아니다. Sources: https://developers.openai.com/api/docs/guides/model-selection ; https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt ; https://www.anthropic.com/claude/fable ; https://deepmind.google/models/gemini/ ; https://deepmind.google/models/model-cards/nano-banana-2-1/ ; https://www.deepseek.com/en/ ; https://www.moonshot.ai/ ; https://qwen.ai/</aside>
+    </section>
+
     <!-- 04 Hallucination -->
     <section data-scene="hallu" data-kicker="04 · 환각" data-term="Hallucination">
       <div class="ask">세종대왕 맥북 던짐 사건 알려 줘</div>
-      <div class="answer-frame" data-show="2"></div>
+      <div class="answer-frame" data-show="14"></div>
       <div class="answer"></div>
-      <div class="hallu-predict" data-show="1" aria-label="다음 말 후보 확률 시연"><div class="predict-context"></div><div class="predict-candidates"></div><div class="predict-status"></div></div>
-      <div class="stamp-wrap" data-show="2" data-delay="0.5"><div class="stamp">그럴듯함 ≠ 사실</div></div>
+      <div class="hallu-predict" data-show="1-13" aria-label="다음 말 후보 확률 시연"><div class="predict-context"></div><div class="predict-candidates"></div><div class="predict-status"></div></div>
+      <div class="stamp-wrap" data-show="14" data-delay="0.5"><div class="stamp">그럴듯함 ≠ 사실</div></div>
 
       <div class="captions">
         <p data-show="0">이렇게 물으면?</p>
-        <p data-show="1">붙인 말까지 보고 <em>다음 후보 확률</em>을 다시 계산한다</p>
-        <p data-show="2" class="strong">문장 전체는 지어낸 이야기<small>환각(hallucination) — 그럴듯하지만 사실이 아닌 답</small></p>
+        <p data-show="1-13">말을 하나씩 붙여 <em>문장</em>을 만든다<small>→ 키를 누를 때마다 다음 어절이 이어진다</small></p>
+        <p data-show="14" class="strong">문장 전체는 지어낸 이야기<small>환각(hallucination) — 그럴듯하지만 사실이 아닌 답</small></p>
       </div>
       <p class="note">과거 오답을 바탕으로 한 시연 · 후보·확률은 설명용 가상 값 · 실제 토큰 대신 어절 단위로 표시</p>
     </section>

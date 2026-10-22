@@ -1,8 +1,8 @@
 // Ch.1: a simple 1/7 rule, ambiguous handwriting, then learning from labels.
 // MNIST images are unchanged 28x28 test samples; filenames use 60000 + test index.
 (() => {
-  // Step 0 toy digits: '#' = white stroke, '.' = black.
-  const TINY = [['1', '.#..#..#.'], ['7', '###..#.#.']];
+  // Step 0 uses the same real MNIST source as later examples.
+  const TINY = ['1-60002', '7-60000'];
   const PILE = ['1-60716', '7-60017', '1-60002', '7-60000'];
   const QUIZ = [0, 1, 2];
   const HEAP = 22 * 9;
@@ -12,19 +12,16 @@
 
   const setup = (section) => {
     const tiny = section.querySelector('.mnist-tiny');
-    TINY.forEach(([digit, cells]) => {
+    TINY.forEach((file) => {
       const fig = document.createElement('figure');
       fig.className = 'tiny';
-      const grid = document.createElement('div');
-      grid.className = 'tiny-grid';
-      [...cells].forEach((c) => {
-        const d = document.createElement('div');
-        d.className = c === '#' ? 'tcell on' : 'tcell';
-        grid.append(d);
-      });
+      const grid = document.createElement('img');
+      grid.className = 'tiny-photo';
+      grid.src = `assets/mnist/${file}.png`;
+      grid.alt = `손글씨 ${file[0]} — MNIST 실제 샘플`;
       const tag = document.createElement('figcaption');
       tag.className = 'mini-label';
-      tag.textContent = digit;
+      tag.textContent = `정답 ${file[0]}`;
       fig.append(grid, tag);
       tiny.append(fig);
     });
