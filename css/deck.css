@@ -175,12 +175,10 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .msg.bot { align-self: flex-start; border-bottom-left-radius: 3px; }
 
 /* ─── 01 MNIST ───────────────────────────────────────────────────────── */
-/* step 0: toy 3x3 digits + the rule a person can write for them */
+/* Step 0: real MNIST digits and a handwritten shape rule. */
 .mnist-tiny { position: absolute; left: var(--gutter); top: 220px; display: flex; gap: 120px; }
 .tiny { position: relative; margin: 0; padding: 18px 18px 64px; background: var(--surface); border: var(--hair) solid var(--rule); border-radius: var(--radius); }
-.tiny-grid { display: grid; grid-template-columns: repeat(3, 120px); gap: 4px; }
-.tcell { width: 120px; height: 120px; background: #000; }
-.tcell.on { background: #fff; }
+.tiny-photo { display: block; width: 360px; height: 360px; image-rendering: pixelated; background: #000; }
 .tiny .mini-label { bottom: 14px; font-size: 32px; }
 .mnist-rule { position: absolute; left: 1130px; top: 280px; padding: 32px 40px; background: var(--surface); border: var(--hair) solid var(--rule); border-radius: var(--radius-2); }
 .mnist-rule span { display: block; margin-bottom: 18px; font-size: var(--t-label); font-weight: 600; color: var(--muted); letter-spacing: var(--track-label); }
@@ -227,6 +225,42 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .pbar.top { color: var(--ink); }
 .pbar.top b, .pbar.top em { color: var(--accent); }
 .pbar.top .track i { background: var(--accent); }
+
+/* Learning loop between GPU compute and inference. */
+.digit-training { position: absolute; left: var(--gutter); right: var(--gutter); top: 165px; display: grid; grid-template-columns: 350px 700px 1fr; align-items: center; gap: 24px; }
+.learn-samples { grid-column: 1 / -1; display: flex; gap: 18px; }
+.learn-sample { display: flex; align-items: center; gap: 16px; padding: 10px 18px; border: 2px solid var(--rule); border-radius: var(--radius); background: var(--surface); opacity: 0.55; }
+.learn-sample img { width: 56px; height: 56px; image-rendering: pixelated; }
+.learn-sample span { font-size: 24px; font-weight: 600; }
+.learn-sample.current { opacity: 1; border-color: var(--accent); background: var(--accent-soft); }
+.learn-sample.done { opacity: 0.85; }
+.learn-input { padding: 26px; background: var(--surface); border: 2px solid var(--rule); border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; transform: rotate(-3deg); }
+.learn-input span { font-size: 32px; font-weight: 700; }
+.learn-input img { width: 230px; height: 230px; image-rendering: pixelated; }
+.learn-input b { font-size: 24px; color: var(--muted); }
+.learn-robot { height: 470px; position: relative; display: flex; justify-content: center; align-items: flex-end; }
+.robot-mascot { height: 345px; width: 310px; object-fit: contain; transform-origin: bottom center; }
+.learn-thought { position: absolute; top: 0; left: 30px; right: 30px; padding: 22px; border: 2px solid var(--accent); border-radius: 35px; background: var(--surface); text-align: center; }
+.learn-thought::after { content: ''; position: absolute; bottom: -16px; left: 45%; width: 26px; height: 26px; background: var(--surface); border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg); }
+.learn-guess { display: block; font-size: 38px; color: var(--accent); }
+.learn-confidence { display: block; margin-top: 10px; font-size: 24px; color: var(--muted); }
+.learn-feedback { padding: 32px; border-radius: 24px; background: var(--accent-soft); border: 2px solid var(--accent); display: flex; flex-direction: column; gap: 22px; opacity: 0; transform: translateY(15px); transition: opacity .3s, transform .3s; }
+.learn-feedback > span:first-child { font-size: 26px; color: var(--muted); }
+.learn-error { font-size: 40px; color: var(--accent); }
+.learn-target-prob { font-size: 26px; }
+.learn-reaction { margin: 0; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 29px; font-weight: 700; line-height: 1.5; }
+.learn-progress { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 22px; font-size: 26px; }
+.learn-round { color: var(--muted); }
+.learn-update { color: var(--accent); }
+.digit-training[data-phase="2"] .learn-feedback, .digit-training[data-phase="3"] .learn-feedback { opacity: 1; transform: none; }
+.digit-training[data-phase="0"] .robot-mascot { animation: robot-think 1.2s ease-in-out infinite alternate; }
+.digit-training[data-phase="3"] .robot-mascot { animation: robot-nod .6s ease-in-out 2; }
+@keyframes robot-think { to { transform: rotate(-4deg) translateY(-5px); } }
+@keyframes robot-nod { 50% { transform: translateY(9px) rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .digit-training .robot-mascot { animation: none; }
+  .learn-feedback { transition: none; }
+}
 
 /* ─── 03 AlphaGo ─────────────────────────────────────────────────────── */
 .stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
@@ -327,6 +361,17 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 .tok-legend i { display: inline-block; width: 28px; height: 20px; border-radius: 2px; margin-right: 10px; vertical-align: -3px; box-sizing: border-box; }
 .tok-legend .full i { border: var(--line) solid var(--ink); background: var(--surface); }
 .tok-legend .part i { border: var(--line) dashed var(--rule-2); }
+
+/* Model names bridge the LLM introduction and hallucination example. */
+.model-family-title { position: absolute; left: var(--gutter); top: 165px; margin: 0; font-size: 64px; font-weight: 700; letter-spacing: -0.04em; }
+.model-families { position: absolute; left: var(--gutter); right: var(--gutter); top: 295px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.model-family { min-height: 220px; padding: 28px; box-sizing: border-box; border: 2px solid var(--rule); border-radius: 18px; background: var(--surface); }
+.model-family > span { font-size: 23px; color: var(--muted); }
+.model-family h3 { margin: 18px 0 16px; font-size: 39px; line-height: 1.15; color: var(--accent); letter-spacing: -0.025em; }
+.model-family.china-models h3 { font-size: 33px; }
+.model-family.image-model { background: var(--accent-soft); border-color: var(--accent); }
+.model-family p { margin: 0; font-size: 28px; font-weight: 600; }
+.model-family small { display: block; margin-top: 10px; font-size: 22px; color: var(--muted); }
 
 /* ─── 06 Hallucination ───────────────────────────────────────────────── */
 .ask { position: absolute; right: var(--gutter); top: 170px; padding: 20px 30px; border-radius: var(--radius-2) var(--radius-2) 2px var(--radius-2); background: var(--ink); color: var(--on-accent); font-size: 38px; font-weight: 600; letter-spacing: -0.02em; }

@@ -1,20 +1,17 @@
-// Ch.4 token: the same sentence cut into tokens by three tokenizer generations,
-// right after next-word prediction. Counts come from data/tokens.js (tiktoken).
+// English and Korean token boundaries from one tokenizer, without model chronology.
 (() => {
   const ROWS = [
-    { key: 'gpt2', lang: 'en', name: '영어', sub: '세 모델 모두', cls: 'en' },
-    { key: 'gpt2', lang: 'ko', name: 'GPT-2', sub: '2019' },
-    { key: 'gpt4', lang: 'ko', name: 'GPT-4', sub: '2023' },
-    { key: 'gpt4o', lang: 'ko', name: 'GPT-4o', sub: '2024' },
+    { lang: 'en', name: '영어', sub: 'I go to school.' },
+    { lang: 'ko', name: '한국어', sub: '나는 학교에 갑니다.' },
   ];
-  const TOPS = [260, 400, 520, 640];
-  const SHOW = ['0-', '1-', '2-', '3-'];
+  const TOPS = [300, 530];
+  const SHOW = ['0-', '1-'];
 
   let r;
 
   const setup = (section) => {
     const rows = ROWS.map((spec, i) => {
-      const blocks = window.TOKENS[spec.key][spec.lang];
+      const blocks = window.TOKENS[spec.lang];
       const row = document.createElement('div');
       row.className = 'tok-row';
       row.style.top = `${TOPS[i]}px`;
@@ -33,7 +30,7 @@
       const els = blocks.map((b) => {
         const t = document.createElement('div');
         t.className = `tok${b.p ? ' part' : ''}${spec.cls ? ` ${spec.cls}` : ''}`;
-        t.textContent = b.t;
+        t.textContent = b.t.replaceAll(' ', '␣');
         toks.append(t);
         return t;
       });
@@ -53,5 +50,5 @@
     });
   };
 
-  Stepper.register('token', { steps: 4, setup, render });
+  Stepper.register('token', { steps: 2, setup, render });
 })();
